@@ -1,6 +1,6 @@
 # JavaPracticeHacktoberfest
 
-Add a simple java example aplication.
+Add a simple Java example application.
 
 Rules: 
 - 2 files maximum per project
