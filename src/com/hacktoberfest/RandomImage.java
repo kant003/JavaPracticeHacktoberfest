@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
+import java.util.Scanner;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -25,17 +26,21 @@ public class RandomImage {
 	}
 
 	public static void main(String[] args) {
-
-		BufferedImage image = new BufferedImage(600, 480, BufferedImage.TYPE_INT_RGB);
+		Scanner teclado = new Scanner(System.in);
+		System.out.print("Introduzca la anchura de la imagen: ");
+		int width = teclado.nextInt();
+		System.out.print("Introduzca la altura de la imagen: ");
+		int height = teclado.nextInt();
+		BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
 		image = setRandomPixels(image);
 
 		JFrame frame = new JFrame();
-		int width = 640;
-		int height = 480;
 		frame.setSize(width, height);
 		frame.getContentPane().setLayout(new BorderLayout());
 		frame.getContentPane().add(new ImagePanel(image));
 		frame.setVisible(true);
+		
+		teclado.close();
 	}
 
 	private static BufferedImage setRandomPixels(BufferedImage image) {
