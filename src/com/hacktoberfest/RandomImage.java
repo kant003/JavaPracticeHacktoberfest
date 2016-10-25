@@ -29,6 +29,7 @@ public class RandomImage {
 	private static JButton btnNewButton;
 
 	// Clase estática ImagePanel para pintar la imagen sobre el frame
+	@SuppressWarnings("serial")
 	private static class ImagePanel extends JPanel {
 		private BufferedImage image;
 
@@ -135,7 +136,6 @@ public class RandomImage {
 		try {
 			ImageIO.write(image, "jpg", outputfile);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -154,5 +154,5 @@ public class RandomImage {
 			}
 		}
 		return image;
-	}
-}
+	} // Fin de main
+} // Fin de clase
