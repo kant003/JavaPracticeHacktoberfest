@@ -9,7 +9,10 @@ import java.awt.Insets;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -113,6 +116,14 @@ public class RandomImage {
 		frame.setSize(width, height);
 
 		frame.setVisible(true);
+		
+		File outputfile = new File("image.jpg");
+		try {
+			ImageIO.write(image, "jpg", outputfile);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	private static BufferedImage setRandomPixels(BufferedImage image) {
