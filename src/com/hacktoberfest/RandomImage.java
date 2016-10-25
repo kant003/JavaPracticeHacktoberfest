@@ -19,13 +19,16 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+// Inicio de clase
 public class RandomImage {
 
+	// Componentes entorno gráfico
 	private static JFrame frame;
 	private static JTextField textField;
 	private static JTextField textField_1;
 	private static JButton btnNewButton;
 
+	// Clase estática ImagePanel para pintar la imagen sobre el frame
 	private static class ImagePanel extends JPanel {
 		private BufferedImage image;
 
@@ -40,8 +43,11 @@ public class RandomImage {
 		}
 	}
 
+	// Inicio main
 	public static void main(String[] args) {
 
+		// Establecer entorno gráfico inicial
+		// Frame
 		frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		GridBagLayout gridBagLayout = new GridBagLayout();
@@ -51,6 +57,7 @@ public class RandomImage {
 		gridBagLayout.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0 };
 		frame.getContentPane().setLayout(gridBagLayout);
 
+		// JLabel anchura
 		JLabel lblAnchura = new JLabel("Anchura:");
 		GridBagConstraints gbc_lblAnchura = new GridBagConstraints();
 		gbc_lblAnchura.anchor = GridBagConstraints.EAST;
@@ -59,6 +66,7 @@ public class RandomImage {
 		gbc_lblAnchura.gridy = 0;
 		frame.getContentPane().add(lblAnchura, gbc_lblAnchura);
 
+		// textField anchura
 		textField = new JTextField();
 		GridBagConstraints gbc_textField = new GridBagConstraints();
 		gbc_textField.insets = new Insets(0, 0, 5, 5);
@@ -68,6 +76,7 @@ public class RandomImage {
 		frame.getContentPane().add(textField, gbc_textField);
 		textField.setColumns(10);
 
+		// JLabel altura
 		JLabel lblAltura = new JLabel("Altura:");
 		GridBagConstraints gbc_lblAltura = new GridBagConstraints();
 		gbc_lblAltura.anchor = GridBagConstraints.EAST;
@@ -76,6 +85,7 @@ public class RandomImage {
 		gbc_lblAltura.gridy = 1;
 		frame.getContentPane().add(lblAltura, gbc_lblAltura);
 
+		// textField altura
 		textField_1 = new JTextField();
 		GridBagConstraints gbc_textField_1 = new GridBagConstraints();
 		gbc_textField_1.insets = new Insets(0, 0, 5, 5);
@@ -85,10 +95,12 @@ public class RandomImage {
 		frame.getContentPane().add(textField_1, gbc_textField_1);
 		textField_1.setColumns(10);
 
+		// JButton crear imagen
 		btnNewButton = new JButton("Crear imagen");
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
+				// Llama al método crearImagen() para crear la imagen con los datos que se le pasan en los textFields
 				crearImagen();
 			}
 		});
@@ -102,6 +114,7 @@ public class RandomImage {
 		frame.setVisible(true);
 	}
 
+	// Crear la imagen con los datos que se le pasan en los textFields, eliminando los componentes anteriores y mostrando la imagen
 	private static void crearImagen() {
 		int width = Integer.parseInt(textField.getText());
 		int height = Integer.parseInt(textField_1.getText());
@@ -117,6 +130,7 @@ public class RandomImage {
 
 		frame.setVisible(true);
 		
+		// Guarda el fichero como .jpg
 		File outputfile = new File("image.jpg");
 		try {
 			ImageIO.write(image, "jpg", outputfile);
@@ -126,6 +140,7 @@ public class RandomImage {
 		}
 	}
 
+	// Coge la imagen y le pone color aleatorio de 8bits a cada pixel
 	private static BufferedImage setRandomPixels(BufferedImage image) {
 		int width = image.getWidth();
 		int height = image.getHeight();
