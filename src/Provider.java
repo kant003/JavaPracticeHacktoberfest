@@ -6,6 +6,7 @@ public class Provider {
 	String name;
 	String address;
 	String email;
+String address;
 
 	public Provider(int id, String name, String address, String email) {
 		super();
