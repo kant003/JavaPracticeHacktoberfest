@@ -1,0 +1,30 @@
+public class DSCSpeedy
+{
+    double vo=0,aceleracion=8;
+    double VelocidadMedia()
+    {
+        //velocidad_final=velocidad_inicial+(aceleracion*tiempo)
+        double vf=0,tiempo=5;
+        vf=vo+(aceleracion*tiempo);
+        double speedMedia=(vo+vf)/2;
+        return speedMedia;
+    }
+ 
+    double VelocidadInstant()
+    {
+        double tiempo=5;
+        double speedInst=(vo+aceleracion*tiempo);
+        return speedInst;
+    }
+ 
+    public static void main(String[] args)
+    {
+ 
+        DSCSpeedy coche = new DSCSpeedy();
+ 
+                double vMedia=coche.VelocidadMedia();
+                System.out.println(vMedia+" m/s");
+                double vInstantanea=coche.VelocidadInstant();
+                System.out.println(vInstantanea+" m/s");
+    }
+}
