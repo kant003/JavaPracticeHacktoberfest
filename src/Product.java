@@ -3,6 +3,7 @@ package com.cebem.model;
 public class Product {
 
 	int id;
+Int cantidad;
 	String name;
 	int ref;
 	double price;
