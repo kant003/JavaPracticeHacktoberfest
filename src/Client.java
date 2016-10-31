@@ -8,6 +8,8 @@ public class Client {
 	String email;
 	String address;
 	String password;
+Int age;
+                  
 
 	@Override
 	public String toString() {
@@ -25,7 +27,7 @@ public class Client {
 		this.address = address;
 		this.password = password;
 	}
-
+T
 	public Client() {
 		super();
 	}
