@@ -4,16 +4,20 @@ import java.util.Scanner;
 
 public class PositivoNegativo {
 
-	public static int leerNumero() {
-		Scanner sc = new Scanner(System.in);
-
-		System.out.println("Inserte un numero: ");
-		int numero = sc.nextInt();
+	
+	static int leer_numero() {
+		Scanner teclado = new Scanner(System.in);
+		System.out.println("Por favor, escriba un n�mero:");
+		String texto;
+		texto = teclado.next();
+		int numero;
+		numero = Integer.parseInt(texto);
 
 		return numero;
 	}
 
 	public static void main(String[] args) {
+
 
 		int numero = leerNumero();
 
@@ -24,3 +28,4 @@ public class PositivoNegativo {
 		}
 	}
 }
+
