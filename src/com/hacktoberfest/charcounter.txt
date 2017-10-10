@@ -1,0 +1,1 @@
+What do communists and functional programmers have in common? They hate classes.
