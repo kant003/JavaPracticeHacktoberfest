@@ -1,0 +1,18 @@
+<? xml version = " 1.0 " encoding = " UTF-8 " ?>
+< projectDescription >
+	< nombre > JavaPracticeHacktoberfest </ name >
+	< comentario > </ comentario >
+	< proyectos >
+	</ projects >
+	< buildSpec >
+		< buildCommand >
+			< nombre > org.eclipse.jdt.core.javabuilder </ name >
+			< argumentos >
+			</ arguments >
+		</ buildCommand >
+	</ buildSpec >
+	< naturalezas >
+		< nature > org.eclipse.jdt.core.javanature </ nature >
+	</ naturalezas >
+</ projectDescription >
+© 2017 GitHub , Inc.
