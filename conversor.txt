@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class porpuesto8 {
+
+	public static void main(String[]args){
+		
+		
+		Scanner sc= new Scanner(System.in);
+		int t=0;
+		
+		int horas;
+		int minutos;
+		int segundos;
+		
+		System.out.println("Introduzca segundos?");
+		t=sc.nextInt();
+		//tengo que saber los minutos,la hora y los segundos
+		
+		horas=t/3600;
+		
+		System.out.println("horas:" + horas);
+		
+		segundos =t/60;
+		System.out.println("sugundos:" + segundos);
+		
+		minutos=(t/60)%60;
+		System.out.println("minutos:" + minutos);
+		
+		
+
+	}
+}
