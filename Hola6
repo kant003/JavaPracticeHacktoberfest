@@ -1,0 +1,174 @@
+public class Principal {
+
+	private JFrame frame;
+	private JTextField txtName;
+	private JTextField txtAge;
+	private JList list;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Principal window = new Principal();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Principal() {
+		initialize();
+		refrescarLista();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 412, 274);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(new CardLayout(0, 0));
+		
+		JPanel panelA = new JPanel();
+		frame.getContentPane().add(panelA, "panel_lista");
+		panelA.setLayout(new BorderLayout(0, 0));
+		
+		JScrollPane scrollPane = new JScrollPane();
+		panelA.add(scrollPane, BorderLayout.CENTER);
+		
+		list = new JList();
+		list.setModel(new DefaultListModel<Cliente>());
+		scrollPane.setViewportView(list);
+		
+		JPanel panel = new JPanel();
+		FlowLayout flowLayout = (FlowLayout) panel.getLayout();
+		flowLayout.setAlignment(FlowLayout.RIGHT);
+		panelA.add(panel, BorderLayout.NORTH);
+		
+		JButton btnAdd = new JButton("A\u00F1adir nuevo cliente");
+		btnAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				CardLayout cl = (CardLayout) frame.getContentPane().getLayout();
+				cl.show(frame.getContentPane(), "panel_formulario");
+			}
+		});
+		btnAdd.setHorizontalAlignment(SwingConstants.RIGHT);
+		panel.add(btnAdd);
+		
+		JPanel panelB = new JPanel();
+		frame.getContentPane().add(panelB, "panel_formulario");
+		GridBagLayout gbl_panelB = new GridBagLayout();
+		gbl_panelB.columnWidths = new int[]{0, 0, 0};
+		gbl_panelB.rowHeights = new int[]{0, 0, 0, 0, 0};
+		gbl_panelB.columnWeights = new double[]{0.0, 1.0, Double.MIN_VALUE};
+		gbl_panelB.rowWeights = new double[]{0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
+		panelB.setLayout(gbl_panelB);
+		
+		JLabel lblNewLabel = new JLabel("Nombre");
+		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
+		gbc_lblNewLabel.insets = new Insets(20, 20, 5, 5);
+		gbc_lblNewLabel.anchor = GridBagConstraints.EAST;
+		gbc_lblNewLabel.gridx = 0;
+		gbc_lblNewLabel.gridy = 0;
+		panelB.add(lblNewLabel, gbc_lblNewLabel);
+		
+		txtName = new JTextField();
+		GridBagConstraints gbc_txtName = new GridBagConstraints();
+		gbc_txtName.insets = new Insets(20, 0, 5, 0);
+		gbc_txtName.fill = GridBagConstraints.HORIZONTAL;
+		gbc_txtName.gridx = 1;
+		gbc_txtName.gridy = 0;
+		panelB.add(txtName, gbc_txtName);
+		txtName.setColumns(10);
+		
+		JLabel lblNewLabel_1 = new JLabel("Edad");
+		GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
+		gbc_lblNewLabel_1.anchor = GridBagConstraints.EAST;
+		gbc_lblNewLabel_1.insets = new Insets(0, 0, 5, 5);
+		gbc_lblNewLabel_1.gridx = 0;
+		gbc_lblNewLabel_1.gridy = 1;
+		panelB.add(lblNewLabel_1, gbc_lblNewLabel_1);
+		
+		txtAge = new JTextField();
+		GridBagConstraints gbc_txtAge = new GridBagConstraints();
+		gbc_txtAge.insets = new Insets(0, 0, 5, 0);
+		gbc_txtAge.fill = GridBagConstraints.HORIZONTAL;
+		gbc_txtAge.gridx = 1;
+		gbc_txtAge.gridy = 1;
+		panelB.add(txtAge, gbc_txtAge);
+		txtAge.setColumns(10);
+		
+		JLabel lblNewLabel_2 = new JLabel("Activado");
+		GridBagConstraints gbc_lblNewLabel_2 = new GridBagConstraints();
+		gbc_lblNewLabel_2.anchor = GridBagConstraints.EAST;
+		gbc_lblNewLabel_2.insets = new Insets(0, 0, 5, 5);
+		gbc_lblNewLabel_2.gridx = 0;
+		gbc_lblNewLabel_2.gridy = 2;
+		panelB.add(lblNewLabel_2, gbc_lblNewLabel_2);
+		
+		JToggleButton btnActivated = new JToggleButton("Esta activado");
+		GridBagConstraints gbc_btnActivated = new GridBagConstraints();
+		gbc_btnActivated.anchor = GridBagConstraints.WEST;
+		gbc_btnActivated.insets = new Insets(0, 0, 5, 0);
+		gbc_btnActivated.gridx = 1;
+		gbc_btnActivated.gridy = 2;
+		panelB.add(btnActivated, gbc_btnActivated);
+		
+		JPanel panel_1 = new JPanel();
+		GridBagConstraints gbc_panel_1 = new GridBagConstraints();
+		gbc_panel_1.fill = GridBagConstraints.BOTH;
+		gbc_panel_1.gridx = 1;
+		gbc_panel_1.gridy = 3;
+		panelB.add(panel_1, gbc_panel_1);
+		
+		JButton btnSave = new JButton("Guardar");
+		btnSave.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//TODO guardar
+				CardLayout cl = (CardLayout) frame.getContentPane().getLayout();
+				cl.show(frame.getContentPane(), "panel_lista");
+			}
+		});
+		panel_1.add(btnSave);
+		
+		JButton btnCancel = new JButton("Cancelar");
+		btnCancel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				txtName.setText("");
+				txtAge.setText("");
+				btnActivated.setSelected(false);
+				
+				CardLayout cl = (CardLayout) frame.getContentPane().getLayout();
+				cl.show(frame.getContentPane(), "panel_lista");
+			}
+		});
+		panel_1.add(btnCancel);
+	}
+	
+	private void refrescarLista() {
+		try {
+			ArrayList<Cliente> listaCliente = ClienteService.getAll();
+			
+			DefaultListModel<Cliente> dlm = (DefaultListModel<Cliente>) list.getModel();
+			dlm.clear();
+			for(Cliente c: listaCliente) {
+				dlm.addElement(c);				
+			}
+			
+		} catch (IOException e) {
+			JOptionPane.showMessageDialog(frame, "Error de conexion", "error"
+					, JOptionPane.ERROR_MESSAGE);
+			e.printStackTrace();
+		}
+	}
+
+}
