@@ -2,7 +2,7 @@ package com.hacktoberfest;
 
 import javax.swing.JOptionPane;
 
-public class calculadora {
+public class calculadorasupermolona {
 
 	public static void main(String[] args) {
 		
