@@ -1,0 +1,61 @@
+import java.util.Scanner;
+
+public class Billetes {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc=new Scanner(System.in);
+		int cant=0;
+		//variables para contar cada tipo de billete
+		int q=0;
+		int d=0;
+		int c=0;
+		int ci=0;
+		int v=0;
+		int di=0;
+		int cin=0;
+		
+		
+		//entrada
+		System.out.println("introduzca cantidad: ");
+		cant=sc.nextInt();
+		
+		//algortimo
+		
+		
+		while(cant>=5) {
+		
+		if(cant>=500) {
+			q++;
+			cant=cant-500;
+			}
+		else if(cant>=200){
+			d++;
+			cant=cant-200;
+			}
+		else if(cant>=100){
+			c++;
+			cant=cant-100;
+			}
+		else if(cant>=50){
+			ci++;
+			cant=cant-50;
+			}
+		else if(cant>=20){
+			v++;
+			cant=cant-20;
+			}
+		else if(cant>=10){
+			di++;
+			cant=cant-10;
+			}
+		else if(cant>=5) {
+			cin++;
+			cant=cant-5;
+		}
+		else if(cant<5)
+		System.out.println("La cantidad sobrante es: "+ cant);
+		}
+	}
+}
