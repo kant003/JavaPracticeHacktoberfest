@@ -1,21 +1,20 @@
 
-public class Ejercicio1 {
-
-	public static char generaLetras() {
-		return (char) (Math.random() * 26 + 'a');
-	}
+		
+public class Ejercicio4 {
 
 	public static void main(String[] args) {
 		
-		char a;
+		int a= 5, b= 8;
 		
-		a=generaLetras();
+		int tmp;
 		
+		tmp=a;
 		
-		System.out.println(  " El valor de a es "+ a    );
-		System.out.println(generaLetras());
-		System.out.println(generaLetras());
-		System.out.println(generaLetras());
-	}
+		a=b;
+		
+		b=tmp;
+		System.out.println("El valor de a ahora es: "+a);
+		System.out.println("El valor de b ahora es: "+b);
+		}
 
 }
