@@ -1,0 +1,47 @@
+
+import java.util.Scanner;
+ 
+public class Ejercicio5 {
+ 
+    public static double calcularLongitud(double r) {
+        return 2*Math.PI*r;
+    }
+ 
+    public static double calcularArea(double r) {
+        return Math.PI*Math.pow(r, 2);
+    }
+ 
+    public static double calcularVolumen(double r) {
+        return (4.0d/3)*Math.PI*Math.pow(r, 3);
+    }
+ 
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+ 
+        Scanner esc = new Scanner(System.in);
+        double radio = 0d;
+        double resultado=0d;
+         
+        do {
+            System.out.println("Introduce un radio positivo para los calculos\n"
+                    + "Introduce 0 para acabar el programa");
+            radio = esc.nextDouble();
+ 
+             
+            resultado=calcularLongitud(radio);
+            System.out.println("La longitud circunf. es: " +resultado);
+             
+            resultado=calcularArea(radio);
+            System.out.println("El area circ. es: " +resultado);
+             
+            resultado=calcularVolumen(radio);
+            System.out.println("El volumen esfera es: " +resultado);
+             
+            System.out.println("--------------------");
+        } while (radio != 0);// bucle de repeticion
+ 
+        System.out.println("Abandonando el programa");
+ 
+    }
+ 
+}
