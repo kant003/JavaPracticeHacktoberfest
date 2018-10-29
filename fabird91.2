@@ -1,0 +1,77 @@
+public class coche {
+
+	 atributo
+	private int velocidad;
+
+	public String nombre;
+	public void setVelocidad(int v) {
+		velocidad = v;
+	}
+
+	public int getVelocidad() {
+		return velocidad;
+	}
+
+	 constructor
+	coche() {
+		velocidad = 0;
+	}
+
+	 constructor con un parametro
+
+	coche(int vel) {
+
+		if (vel  0)
+			this.velocidad = vel;
+		else
+			System.out.println(NO SE ADMITEN Velocidades NEGATIVAS);
+	}
+
+	
+	coche(int vel,String nom){
+		if() {
+	}else {
+		System.out.println();
+	}
+		
+	
+	
+	
+	public void acelera(int mas) {
+		int limite = velocidad + mas;
+		if (mas  0) {
+			if (limite  120) {
+				System.out.println(Exceso velocidad);
+				velocidad = 120;
+			} else {
+				velocidad += mas;
+			}
+		} else {
+			System.out.println(NO SE ADMITEN CANTIDADES NEGATIVAS);
+		}
+	}
+
+	public void frena(int menos) {
+		int limite = velocidad - menos;
+		if (menos  0)
+			if (limite  0) {
+				System.out.println(Estas parado);
+				velocidad = 0;
+			} else {
+				velocidad -= menos;
+			}
+		else
+			System.out.println(NO SE ADMITEN CANTIDADES NEGATIVAS);
+	}
+
+
+
+	@Override
+	
+	public String toString() {
+		return La velocidad es  +velocidad;
+		
+	}
+	
+	
+}
