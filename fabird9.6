@@ -1,0 +1,40 @@
+public class letras {
+
+	private char letra;
+
+	letras(char c) {
+		letra = c;
+		if ((c >= 'a')& (c<='z'))
+		{
+			letra -= 'a';
+			letra += 'A';
+		}
+	}
+
+	
+
+	public char getLetra() {
+		return letra;
+	}
+
+	public void printLetra() {
+		System.out.println(letra);
+	}
+	
+	public static void main(String[] args) {
+		
+		letras let1,let2,let3,let4;
+		
+		let1=new letras('d');
+		let2=new letras('H');
+		let3=new letras('/');
+		let4=new letras('}');
+		let1.printLetra();
+		let2.printLetra();
+		let3.printLetra();
+		let4.printLetra();
+		
+		
+	}
+
+}
