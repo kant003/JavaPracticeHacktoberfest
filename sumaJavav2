@@ -1,0 +1,20 @@
+class sumaV2{
+import java.util.Scanner;
+  public static int setDato(String mensaje){
+  Scanner lector = new Scanner(System.in);
+  int dato;
+  System.out.println(mensaje);
+  dato = lector.nextInt();
+  return dato;
+  }
+  public static void main(String[] args){
+  int num1;
+  int num2;
+  int suma;
+  
+  System.out.println(setDato("Escriba el numero primer para sumar"));
+  System.out.println(setDto("Escriba el numero segundo para sumar"));
+  suma = num1 + num2;
+  System.out.println(suma);
+  }
+}
