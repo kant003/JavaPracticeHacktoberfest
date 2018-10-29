@@ -1,0 +1,1 @@
+Es un lenguaje interpretado del lado del cliente implementado en un navegador creando paginas web dinamicas
