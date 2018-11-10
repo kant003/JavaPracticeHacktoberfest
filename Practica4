@@ -1,0 +1,46 @@
+public class Práctica1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		//Ejercicio 1
+		
+		int N = 4;
+		double A = 8;
+		char C = (char)97;
+		
+		System.out.println("La suma de N + A es igual a " + (N + A));
+		System.out.println("La resta de A - N es igual a " + (N - A));
+		System.out.println("El valor numérico de C es igual a " + C);
+		
+		//Ejercicio 2
+		
+		int X = 20;
+		int Y = 59;
+		double P =7.39;
+		double M = 36.28;
+		
+		System.out.println("La suma de X + Y es igual a " + (X + Y));
+		System.out.println("La resta de X - Y es igual a " + (X - Y));
+		System.out.println("El producto de X * Y es igual a " + (X * Y));
+		System.out.println("El resto de X / Y es igual a " + (X / Y));
+		System.out.println("La suma de P + M es igual a " + (P + M));
+		System.out.println("La resta de P - M es igual a " + (P - M));
+		//Etc...
+		
+		//Ejercicio 3
+		
+		int l = 14;
+		
+		l = l +77;
+		System.out.println(l);
+		
+		l = l -3;
+		
+		System.out.println(l);
+		
+		l = l *2;
+		
+		System.out.println(l);
+	}
+}
