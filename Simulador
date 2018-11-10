@@ -1,0 +1,14 @@
+public static void main(String args[]) {
+	JFrame frame = new JFrame();
+	JPanel panel = new JPanel();
+	frame.add(panel);
+
+	panel.add(new JLabel("north", new ArrowIcon(ArrowIcon.NORTH), JLabel.CENTER));
+	panel.add(new JLabel("west", new ArrowIcon(ArrowIcon.WEST), JLabel.CENTER));
+	panel.add(new JLabel("south", new ArrowIcon(ArrowIcon.SOUTH), JLabel.CENTER));
+	panel.add(new JLabel("east", new ArrowIcon(ArrowIcon.EAST), JLabel.CENTER));
+	panel.add(new JLabel("east-20", new ArrowIcon(ArrowIcon.EAST, 20, Color.blue), JLabel.CENTER));
+
+	frame.pack();
+	frame.setVisible(true);
+}
