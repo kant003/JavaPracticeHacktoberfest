@@ -1,5 +1,0 @@
-public class holamundo {
-
-   public state void main (String[]args) {
-
-System.out.prinln("Hola mundo");
