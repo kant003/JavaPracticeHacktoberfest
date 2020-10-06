@@ -1,0 +1,2 @@
+-Mama, que haces delante del ordenador con los hojos cerrados???
+-Nada hijo, es que Windows me dijo que cierre las pestañas

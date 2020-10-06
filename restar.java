@@ -1,17 +1,25 @@
-class restar{
 
-    public static void main( String[] args )
-    {
-        Scanner sc = new Scanner(System.in);
+import java.util.Scanner;
 
-        System.out.println("Introduce el primer número:");			
-        numero1 = sc.nextInt();
-			
-        System.out.println("Introduce el segundo número:");
-        numero2 = sc.nextInt();
+public class restar {
 
-        resultado = numero1-numero2;
+	public static void main (String[] args){
 
-        System.out.println("La resta es " + numero1 + " - " + numero2 + " = " + resultado);
-    }
-}
+	Scanner sc = new Scanner(System.in);
+	int num1;
+	int num2;
+	int operacion;
+
+	System.out.println("Por favor, introduce el primer numero: ");
+	num1 = sc.nextInt();
+
+	System.out.println("Por favor introduce el segundo numero: ");
+	num2 = sc.nextInt();
+	
+	operacion = num1 - num2;
+	
+	System.out.println("El resultado de la operacion es: "+operacion);
+
+ {
+{
+
