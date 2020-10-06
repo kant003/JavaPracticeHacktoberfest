@@ -1,0 +1,1 @@
+Un recolector de basura es un mecanismo implícito de gestión de memoria implementado en algunos lenguajes de programación de tipo interpretado o semiinterpretado.

@@ -1,0 +1,6 @@
+Cual es el personaje favorito de star wars de los informáticos? Un ingeniero de Microsoft, uno de Intel y un programador de Linux se encuentran en el lavabo. El de Microsoft acaba el primero, y a la hora de lavarse las manos lo hace a conciencia, con mucho jabón y agua, y para secarse usa un montón de toallitas de papel, y dice:
+- Los de Microsoft, lo que hacemos lo hacemos bien.
+El ingeniero de Intel, también se lava a conciencia, pero utiliza muy poca agua y muy poco jabón, y para secarse utiliza una esquinita de una toallita de papel. Cuando acaba dice:
+- Los de Intel, además de hacerlo bien, lo optimizamos al máximo.
+El programador de Linux, sin lavarse, mira a los otros dos y dice:
+- Los de Linux no nos meamos en las manos...
