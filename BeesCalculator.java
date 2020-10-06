@@ -7,7 +7,7 @@ public class Calculator
 public static void main(String args[])
 {
     float a, b, res;
-    char select, ch;
+    char choice;
     Scanner scan = new Scanner(System.in);
 
     do
@@ -20,35 +20,35 @@ public static void main(String args[])
         System.out.print("Enter Your Choice : ");
         choice = scan.next().charAt(0);
 
-        switch(select)
+        switch(choice)
         {
             case '1' : System.out.print("Enter Two Number : ");
                 a = scan.nextFloat();
                 b = scan.nextFloat();
                 res = a + b;
-                System.out.print("Result = " + res);
+                System.out.println("Result = " + res);
                 break;
             case '2' : System.out.print("Enter Two Number : ");
                 a = scan.nextFloat();
                 b = scan.nextFloat();
                 res = a - b;
-                System.out.print("Result = " + res);
+                System.out.println("Result = " + res);
                 break;
             case '3' : System.out.print("Enter Two Number : ");
                 a = scan.nextFloat();
                 b = scan.nextFloat();
                 res = a * b;
-                System.out.print("Result = " + res);
+                System.out.println("Result = " + res);
                 break;
             case '4' : System.out.print("Enter Two Number : ");
                 a = scan.nextFloat();
                 b = scan.nextFloat();
                 res = a / b;
-                System.out.print("Result = " + res);
+                System.out.println("Result = " + res);
                 break;
             case '5' : System.exit(0);
                 break;
-            default : System.out.print("Wrong Choice!!!");
+            default : System.out.println("Wrong Choice!!!");
         }
     }while(choice != 5);       
 }

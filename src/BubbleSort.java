@@ -2,17 +2,25 @@ public class BubbleSort {
 
 	private static void sort(int[] a) {
 		int length = a.length;
+    		boolean swap = false;
 
-		for (int i = 0; i < length - 1; i++) {
-			for (int j = 0; j < length - i - 1; j++) {
-				if (a[j] > a[j + 1]) {
+	    // Enhanced Bubble sort - Best Case Time-Complexity O(n)
+	    do{
+		      swap = false;
+
+		      for(int i = 0 ; i < length - 1; i++){
+				if (a[i] > a[i + 1]) {
 					//Swap positions
 					int k = a[i];
-					a[i] = a[j];
-					a[j] = k;
+					a[i] = a[i + 1];
+					a[i + 1] = k;
+
+					//set swap to true
+					swap = true;
 				}
-			}
-		}
+		      }
+	      }while(swap);
+
 	}
 
 	public static void main(String[] args) {
