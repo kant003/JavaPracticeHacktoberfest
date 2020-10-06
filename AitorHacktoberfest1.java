@@ -7,4 +7,10 @@ public static void main(String[] args){
     int suma=n1+n2;
 
     System.out.println(suma);
+
+    int n1=5;go
+    int n2=1;
+    int resta=n1-n2;
+
+    System.out.println(resta);
 }
