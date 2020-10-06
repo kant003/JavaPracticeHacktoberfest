@@ -1,0 +1,42 @@
+package options;
+
+import java.util.Scanner;
+
+public class options {
+
+	public static void main(String[] args) {
+		
+		Scanner sn = new Scanner(System.in);
+		boolean exit = false;
+		int opcion;
+		
+		while(!exit) {
+			
+			System.out.println("Option 1");
+			System.out.println("Option 2");
+			System.out.println("Option 3");
+			System.out.println("Exit");
+			
+			 System.out.println("Please select an option");
+	           opcion = sn.nextInt();
+	        
+	           switch(opcion){
+               case 1:
+                   System.out.println("You have selected option 1");
+                   break;
+               case 2:
+                   System.out.println("You have selected option 2");
+                   break;
+                case 3:
+                   System.out.println("You have selected option 3");
+                   break;
+                case 4:
+                   exit=true;
+                   break;
+                default:
+                   System.out.println("ERROR: Select one of the 4 options");
+           }
+		}
+	}
+
+}
