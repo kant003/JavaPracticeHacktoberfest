@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+</head>
+<body>
+    <input id="texto" type="text">
+    <button id="boton">Añadir</button>
+    <br/>
+    <ul id="lista">
+        <li>dato 1</li>
+        >
+    </ul>
+    <script>
+        document.getElementById('boton')
+                .addEventListener('click', addTexto )
+        
+        function addTexto(){
+            var texto = document.getElementById('texto').value
+            var nuevoLi = document.createElement('li')
+            var nuevoTexto = document.createTextNode(texto)
+            nuevoLi.appendChild(nuevoTexto)
+            
+        }
+    </script>
+</body>
+</html>
