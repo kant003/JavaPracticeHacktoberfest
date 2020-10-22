@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function obtenerDatosPaisesPromesas(){
+            let url = 'https://pkgstore.datahub.io/core/country-codes/country-codes_json/data/471a2e653140ecdd7243cdcacfd66608/country-codes_json.json'
+            return fetch(url);
+        } 
+
+       obtenerDatosPaisesPromesas()
+            .then( r => r.json())
+            .then( r => r.map( p => p['CLDR display name'] + ' ' + p.Capital) )
+            .then( r => console.log(r) )
+            
+    </script>
+</body>
+</html>
