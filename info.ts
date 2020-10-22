@@ -22,6 +22,10 @@ export class UserSingsComponent2 implements OnInit {
    
   }
 
+  @ViewChild('fruitInput') fruitInput: ElementRef<HTMLInputElement>;
+  @ViewChild('auto') matAutocomplete: MatAutocomplete;
+
+  
   ngOnInit(): void {
     this.enrollments$ = this.getEnrollmentsOfUser();
 
