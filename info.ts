@@ -13,14 +13,13 @@ import { Sing } from 'src/app/models/sing';
   templateUrl: './user-sings.component.html',
   styleUrls: ['./user-sings.component.css']
 })
-export class UserSingsComponent implements OnInit {
-  @Input() idAlumno: any;
+export class UserSingsComponent2 implements OnInit {
+  @Input() idAlumno2: any;
   private enrollmentCollection: AngularFirestoreCollection<Enrollment>;
   enrollments$: Observable<Enrollment[]>;
 
   constructor(private afs: AngularFirestore, private route: ActivatedRoute) {
-    if (!this.idAlumno) this.idAlumno = route.snapshot.paramMap.get('id')
-
+   
   }
 
   ngOnInit(): void {
