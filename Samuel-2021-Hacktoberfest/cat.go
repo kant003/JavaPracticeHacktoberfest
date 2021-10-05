@@ -9,7 +9,8 @@ import (
 
 // TODO: Get all file lines, and print them to stdio
 func main() {
-    flag.Parse()
+    flag.Parse();
+    catFile(flag.Arg(0));
 }
 
 func catFile(filename string) {
