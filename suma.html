@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Hello World!</title>
+        <style>
+            body {
+                color: white;
+                background-color: black;
+                font-size: 42px;
+                font-weight: bold;
+            }
+            #text {
+                border: 1px white solid;
+                border-radius: 20px;
+                margin: 0 auto;
+                text-align: center;
+            }
+            #res {
+                border: 1px white solid;
+                border-radius: 20px;
+                margin: 0 auto;
+                text-align: center;
+                font-size: 50;
+            }
+            input {
+                margin: 0 auto;
+                margin-bottom: 10px;
+                margin-top: 10px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="text"></p>
+        <input type="number" id="num1" placeholder="Número 1"><br/>
+        <input type="number" id="num2" placeholder="Número 2"><br/>
+        <button id="calculate">Calcular</button>
+        <p id="res"></p>
+
+    </body>
+    <script>
+        const text = "Hello World!"
+        document.getElementById("text").textContent = text
+        document.getElementById("calculate").addEventListener("click", suma)
+
+        function suma() {
+            num1 = document.getElementById("num1").value
+            num2 = document.getElementById("num2").value
+            res = +num1 + +num2
+            document.getElementById("res").textContent = res
+        }
+    </script>
+</html>
