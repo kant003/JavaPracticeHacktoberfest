@@ -1,12 +1,20 @@
-
+// Java Program to find a power of given number
 	
-java.util.Scanner;
+// import Scanner class from java.utils
+import java.util.Scanner;
+
+// Power class
 class Power
 {
+
+	// Main class
    public static void main(String arg[])
 	
    {
-	
+	// n for input
+	// p for power
+	// r for result
+	   
        long n,p,r=1;
 	
        Scanner sc=new Scanner(System.in);
@@ -18,6 +26,8 @@ class Power
        System.out.println("enter power");
 	  
        p=sc.nextLong();
+	   
+	   //Logic
  
        if(n>=0&&p==0)
        {   
@@ -35,6 +45,7 @@ class Power
  	 	}    
   	 }    
  
+	   // output
     	  System.out.println(n+"^"+p+"="+r);
  
     }
