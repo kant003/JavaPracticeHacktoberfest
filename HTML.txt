@@ -1,1 +1,0 @@
-El lenguaje HTML es un lenguje plano de marcas con la capacidad que es mostrado por un programa llamado navegador que lo abrira y lo mostrara por pantalla

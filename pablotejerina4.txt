@@ -1,1 +1,0 @@
-Dos programadores java charlando: «la excepción confirma la regla» «pues si hay una excepción, la capturamos».

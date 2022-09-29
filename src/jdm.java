@@ -1,8 +1,0 @@
-public class j3dm {
-
-	public static void main(String[] args) {
-		system.out.println("GitHub dame mi camiseta 3/5!");
-
-	}
-
-}
