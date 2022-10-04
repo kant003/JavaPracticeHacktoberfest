@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class PabloDominguez {
     public static double DolarAEuro(double dolar) {
 		
