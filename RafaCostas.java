@@ -1,4 +1,4 @@
-class Suma{
+class RafaCostas{
    
     public static void main(String[] args){
         int i=0;
