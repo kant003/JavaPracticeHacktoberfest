@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<tittle> Ejercicio enlaces relativos</tittle>
+		<link rel="stylesheet" type="text/css" href="" />
+	</head>
+	<body>
+		<h1>El origen y el destino del enlace se encuentran en el mismo directorio</h1>
+
+		<p>Si desde una página web se quiere enlazar un recurso que se encuentra en el mismo directorio del servidor, la URL relativa puede prescindir de todas las partes de la URL absoluta salvo el nombre del recurso enlazado.</p>
+		<pre>
+			Página origen	http://www.ejemplo.com/ruta1/ruta2/ruta3/pagina1.html
+Página enlazada	Página web llamada pagina2.html y que se encuentra en el mismo directorio
+URL absoluta	http://www.ejemplo.com/ruta1/ruta2/ruta3/pagina2.html
+URL relativa	pagina2.html
+
+<p>Cuando el navegador encuentra una URL relativa que sólo consiste en el nombre de un recurso, supone que el protocolo, servidor y directorio del recurso enlazado son los mismos que los del origen del enlace.</p>
+</pre>
+<a href="Pagina02.html">SALTA LA PAGINA</a>
+</body>
+</html>
