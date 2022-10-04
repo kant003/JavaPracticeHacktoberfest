@@ -74,7 +74,7 @@ public static void main(String[] args) {
 
 			multiplicador = sc.nextInt();
 
-			System.out.println("Primer multiplicando : ");
+			System.out.println("Segundo multiplicando : ");
 
 			multiplicando = sc.nextInt();
 
