@@ -1,4 +1,6 @@
+
 import java.util.Scanner;
+
 public class GabrielRomero {
     
     //1 euro = 0,96 dolares
@@ -30,5 +32,6 @@ public class GabrielRomero {
 		aux=sc.nextDouble();
 		System.out.println("en euros son: "+dolarAEuro(aux));
 
+		sc.close();
 	}
 }
