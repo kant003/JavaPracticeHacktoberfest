@@ -8,4 +8,4 @@ There have 2 small samples <./> instructions to discover any server you want (co
 ### How To
  
 Se precisa instalar las dependencias de NPM npm install y npm run, una vez hecho.
-Además, se debe acoplar la guildid y el token además de la clientid mismo, que los puedes encontrar en la herramineta de discord para crear bots e introducirlos en un config.json.
+Además, se debe acoplar la guildid y el token además de la clientid mismo, que los puedes encontrar en la herramienta de discord para crear bots e introducirlos en un config.json.
