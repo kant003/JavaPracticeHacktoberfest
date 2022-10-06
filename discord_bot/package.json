@@ -1,0 +1,27 @@
+{
+  "name": "discord-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Alexis",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.3.0",
+    "dotenv": "^16.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.24.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alesi7/discord_bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Alesi7/discord_bot/issues"
+  },
+  "homepage": "https://github.com/Alesi7/discord_bot#readme",
+  "description": ""
+}
