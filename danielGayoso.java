@@ -1,6 +1,7 @@
 import java.util.Scanner;
 public class danielGayoso {
     public static void main(String[] args) {
+        //Verificar edad
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduce tu edad: ");
         int edad = sc.nextInt();
