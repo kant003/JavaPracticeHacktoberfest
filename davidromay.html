@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Púlsame y e digo Hola</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.5s;
+
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script type="module">
+        document.getElementById("miBoton").addEventListener("click",saluda)
+        function saluda(){
+            document.getElementById("miBoton").innerHTML="Hola que tal";
+            confetti();
+        }
+
+    </script>
+</head>
+
+<body>
+    <button id="miBoton">Púlsame</button>
+    
+</body>
+</html>
