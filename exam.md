@@ -126,6 +126,6 @@ Desarrollar la funcionalidad básica para el registro, inicio de sesión, y la i
 ### **Capacidad del Equipo**:  
 - Asignar tareas en función de la capacidad y especialidad de cada miembro del equipo (frontend, backend, pruebas).
 
-Este backlog del Sprint 1 se enfoca en sentar las bases para el funcionamiento básico de la app de chat. ¿Te gustaría ajustar o agregar alguna tarea más?
+Este backlog del Sprint 1 se enfoca en sentar las bases para el funcionamiento básico de la app de chat. 
 
 
