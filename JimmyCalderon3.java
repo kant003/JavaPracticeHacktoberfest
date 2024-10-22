@@ -19,5 +19,6 @@ System.out.println("Por favor dame numero de millas: ");
 double mil=sc.nextDouble();
 System.out.println("Pasado a metros es: "+millasAMetros(mil));
 System.out.println("Pasado a Kilometros es: "+millasAKilometros(mil));
+sc.close();
 }
 }// fin class
