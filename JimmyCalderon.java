@@ -5,6 +5,7 @@ public class JimmyCalderon {
         GASEOSO,
         TERRESTRE,
         ENANO,
+        
     }// Fin Enum
      // Constante
 
