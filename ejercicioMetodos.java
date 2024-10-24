@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class ejercicioMetodos {
@@ -27,6 +26,7 @@ public class ejercicioMetodos {
 		kilometros = sc.nextDouble();
 		metros = kilometrosAMetros(kilometros);
 		System.out.println("en metros son: " + metros);
+		sc.close();
 
 	}
 }
