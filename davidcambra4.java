@@ -44,7 +44,7 @@ public class davidcambra4 {
                     System.out.println("el porcentaje de descuento es: " + calculaPorcentaje(uno, dos));
                     break;
                 }
-                case 2: { // sale final
+                case 2: {
                     double ori, por;
                     System.out.println("dame final: ");
                     ori = sc.nextDouble();
