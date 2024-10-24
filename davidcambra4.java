@@ -4,7 +4,7 @@ public class davidcambra4 {
     public static double calculaPorcentaje(double antes, double despues) {
         double aux = antes - despues;
         double coci = aux / antes;
-        return coci * 100; // para ser porcentaje
+        return coci * 100;
     }
 
     public static double dimePrecioFinal(double antes, double porcentaje) {
