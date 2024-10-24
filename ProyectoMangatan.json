@@ -1,0 +1,18 @@
+[
+    {"Fechas":[
+        {"dia":"Miercoles 27 de Abril de 2024","descriptcion":"El dia del mamoneo"},
+        {"dia":"Viernes 12 de Agosto de 2024","descriptcion":"Viernes di"},
+        {"dia":"Lunes 2 de Febrero de 2024","descriptcion":"Dia del abuelo"}
+    ]},
+    {
+        "Pajaro_Rojo":true,
+        "info":[ 
+            {
+                "abance":"64%",
+                "sujetos":498,
+                "comandante":null
+            }
+        ]
+    }
+    
+]
