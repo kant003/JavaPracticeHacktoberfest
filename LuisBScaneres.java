@@ -1,4 +1,4 @@
-package boletinFichSwing;
+package escaner;
 
 import java.util.Scanner;
 
@@ -108,6 +108,28 @@ public class Scany {
 		
 		return res;
 	}
+	
+	public static float scanyFloat(String texto) {
+	float res = 0;
+	Boolean fallo=false;
+	
+	do {
+		try {
+			Scanner sc=new Scanner(System.in);
+			System.out.println(texto);
+			res=sc.nextFloat();
+			fallo=false;
+		}catch(Exception e) {
+			fallo=true;
+			System.err.println("Error con el dato introducido: " + e.getMessage());
+			System.out.println("debe de ser un float, intentalo de nuevo");
+		}
+		
+	}while(fallo);
+	
+	
+	return res;
+}
 	
 	
 	
