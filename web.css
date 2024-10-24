@@ -1,0 +1,68 @@
+#header1 {
+  align-items: center;
+  text-align: center;
+}
+
+#tabla1 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#h2 {
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+
+.bot {
+  background-color: rgb(212, 152, 63);
+  border: solid 2px rgb(0, 0, 0);
+  text-align: center;
+  padding: 100%;
+  font-size: 150%;
+  margin: 4px 2px;
+  cursor: pointer;
+  padding: 15px 32px;
+}
+
+.bot:hover {
+  background-color: rgb(190, 83, 50);
+  color: wheat;
+}
+
+.bot3 {
+  background-color: rgb(184, 102, 9);
+}
+
+.h1 {
+  background-color: rgba(60, 119, 175, 0.63);
+  color: white;
+  font-size: 200%;
+  font-family: monospace;
+  padding: 2%;
+}
+
+body {
+  background-color: rgb(127, 166, 197);
+  padding: 5px;
+}
+#tabla2 {
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#th1 {
+  height: 40px;
+  color: rgb(0, 0, 0);
+}
+
+#td1 {
+  padding: 10px;
+  border: 0px solid white;
+  align-items: center;
+}
+
+#td1:hover {
+  background-color: rgb(105, 159, 172);
+}

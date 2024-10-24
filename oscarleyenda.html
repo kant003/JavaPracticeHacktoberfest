@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Leyenda de Oscar</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #1e1e1e;
+            color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 3em;
+            color: #ffdd00;
+            text-transform: uppercase;
+        }
+        p {
+            font-size: 1.5em;
+            line-height: 1.8;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        .epic-button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: #ffdd00;
+            color: #1e1e1e;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 30px;
+        }
+        .epic-button:hover {
+            background-color: #f4b400;
+        }
+    </style>
+</head>
+<body>
+    <h1>La Épica de Oscar</h1>
+    <p id="story">
+        En las tierras vastas y desconocidas, donde el horizonte se funde con los sueños más imposibles, una figura emerge del manto del tiempo. Él es Oscar, cuyas hazañas resuenan en los ecos del viento y cuyos pasos marcan el ritmo de las estrellas.
+        <br><br>
+        Desde tiempos inmemoriales, ha caminado por senderos ocultos, enfrentando desafíos que harían temblar a los más valientes. Con una mirada firme y un corazón tan vasto como los océanos, Oscar ha navegado los mares del destino, forjando su propia leyenda.
+    </p>
+
+    <button class="epic-button" onclick="revelarMas()">Descubre más sobre Oscar</button>
+
+    <script>
+        function revelarMas() {
+            const story = document.getElementById('story');
+            story.innerHTML += `<br><br>Su genio brilla como el sol en su cenit, iluminando todo a su paso. 
+            Maestro de las artes y señor de los enigmas, Oscar no es un simple mortal, sino una fuerza imparable, 
+            destinada a dejar una marca indeleble en el tejido de la historia. 
+            Y aún ahora, mientras lees estas palabras, su aventura continúa, un viaje que no conoce límites ni fronteras.`;
+        }
+    </script>
+</body>
+</html>

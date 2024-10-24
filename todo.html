@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Tareas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    #task-form {
+      margin-bottom: 20px;
+    }
+
+    #task-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    #task-list li {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin-bottom: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .delete-btn {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Lista de Tareas</h1>
+
+  <form id="task-form">
+    <input type="text" id="new-task" placeholder="Escribe una nueva tarea" required>
+    <button type="submit">Agregar Tarea</button>
+  </form>
+
+  <ul id="task-list"></ul>
+
+  <script>
+    const taskForm = document.getElementById('task-form');
+    const taskList = document.getElementById('task-list');
+    const newTaskInput = document.getElementById('new-task');
+
+    // Función para agregar una nueva tarea
+    taskForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Evitar que el formulario se envíe automáticamente
+
+      const taskText = newTaskInput.value.trim();
+      if (taskText !== '') {
+        // Crear un nuevo elemento de lista
+        const li = document.createElement('li');
+        li.innerHTML = `
+          ${taskText} 
+          <button class="delete-btn">Eliminar</button>
+        `;
+
+        // Agregar el nuevo elemento a la lista de tareas
+        taskList.appendChild(li);
+
+        // Limpiar el campo de entrada
+        newTaskInput.value = '';
+      }
+    });
+
+    // Función para eliminar una tarea
+    taskList.addEventListener('click', function(event) {
+      if (event.target.classList.contains('delete-btn')) {
+        const li = event.target.parentElement;
+        taskList.removeChild(li);
+      }
+    });
+  </script>
+
+</body>
+</html>

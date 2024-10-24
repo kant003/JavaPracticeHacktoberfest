@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>La h web</title>
+  <link rel="stylesheet" type="text/css" href="web.css"> <!-- Uso del archivo css -->
+</head>
+
+<header id="header1">
+
+  <table id="tabla1">
+    <!-- Cabecera -->
+
+    <tr>
+      <h1 class="h1"> Enlaces a otras webs varias </h1>
+    </tr>
+
+    <!-- Zona de botones -->
+    <tr>
+      <td><a href="inicio.html"><button class="bot bot1" type="button"> Inicio </button></a></td>
+      <td><a href="compras.html"><button class="bot bot2" type="button"> Compras</button></a></td>
+      <td><a href="web.hmtl"><button class="bot bot3" type="button"> Webs </button></a></td>
+      <td><a href="otro.html"><button class="bot bot4" type="button"> Otro </button></a></td>
+    </tr>
+
+  </table>
+
+</header>
+
+<body>
+
+  <h2 id="h2"> Haga click en las imágenes para ir a las webs </h2>
+
+  <!-- Tabla general -->
+  <table id="tabla2">
+
+    <!-- Nombres de los sitios -->
+    <tr>
+      <th id="th1"> Youtube </th>
+      <th id="th1"> Twich </th>
+      <th id="th1"> Twitter </th>
+      <th id="th1"> Instagram </th>
+      <th id="th1"> OnlyFans </th>
+      <th id="th1"> Reddit </th>
+      <th id="th1"> 4Chan </th>
+      <th id="th1"> Wikipedia </th>
+    </tr>
+
+    <tr>
+
+      <!-- Imagen con links a los diferentes sitios -->
+      <td id="td1">
+        <a href="https://www.youtube.com/">
+          <img src="images/youtube-icon.png" alt="youtube" width="150" height="100">
+        </a>
+      </td>
+
+      <td id="td1">
+        <a href="https://www.twitch.tv/">
+          <img src="images/twich-icon.png" alt="Twich" width="150" height="130">
+        </a>
+      </td>
+
+      <td id="td1">
+        <a href="https://x.com/?lang=es">
+          <img src="images/twitter-icon.png" alt="Twitter" width="150" height="130">
+        </a>
+      </td>
+
+      <td id="td1">
+        <a href="https://www.instagram.com/">
+          <img src="images/instagramicon.png" alt="instagram" width="150" height="130">
+        </a>
+      </td>
+
+      <td id="td1">
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+          <img src="images/OF-icon.png" alt="OnlyFans" width="150" height="130">
+        </a>
+      </td>
+
+      <td id="td1">
+        <a href="https://www.reddit.com/">
+          <img src="images/reddit-icon.png" alt="Reddit" width="150" height="130">
+        </a>
+      </td>
+
+      <td id="td1">
+        <a href="https://www.4chan.org/">
+          <img src="images/4chan-icon.png" alt="4chan" width="150" height="130">
+        </a>
+      </td>
+
+      <td id="td1">
+        <a href="https://es.wikipedia.org/wiki/Wikipedia:Portada">
+          <img src="images/wikipedia-icon.png" alt="wikipedia" width="150" height="130">
+        </a>
+      </td>
+
+    </tr>
+
+  </table>
+  <!-- Fin de tabla general -->
+
+  <p> Página de pruebas, si algo no va es culpa de otro (Juan probablemente) </p>
+
+</body>
+
+</html>

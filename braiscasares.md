@@ -1,0 +1,1 @@
+"El objetivo no está siempre destinado a ser alcanzado, a menudo sirve simplemente como una meta a la cual que apuntar". Bruce Lee.
