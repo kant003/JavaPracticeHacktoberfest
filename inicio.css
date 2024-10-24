@@ -1,0 +1,73 @@
+#header1 {
+    background-color: rgb(35, 36, 37);
+    align-items: center;
+    text-align: center;
+    padding: 2%;
+  
+  }
+  
+  #tabla1 {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .bot {
+    background-color: rgb(35, 36, 37);
+    border: solid 2px rgb(104, 68, 2);
+    text-align: center;
+    padding: 10%;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 15px 32px;
+  }
+  
+  .bot:hover {
+    background-color: rgb(104, 68, 2);
+    color: wheat
+  }
+  
+  .bot1 {
+    background-color: rgb(104, 68, 2);
+  }
+  
+  #h1 {
+    background-color: rgb(24, 23, 23);
+    text-align: center;
+    color: orange;
+    font-size: 200%;
+    font-family: monospace;
+    padding: 5%;
+  }
+  
+  body {
+    background-color: rgb(35, 36, 37);
+  }
+  
+  #h2 {
+    text-align: center;
+  }
+  
+  #tabla2 {
+    border-collapse: collapse;
+    border: 0px solid white;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #th1 {
+    border: 0px solid white;
+    height: 40px;
+    color: rgb(0, 119, 255);
+  }
+  
+  #td1 {
+    padding: 10px;
+    border: 0px solid white;
+    align-items: center;
+  }
+  
+  #td1:hover {
+    background-color: rgb(70, 66, 66);
+  }
+  

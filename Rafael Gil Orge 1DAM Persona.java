@@ -1,4 +1,4 @@
-package Javacosas;
+// package Javacosas;
 
 public class Persona {
     // atributos
