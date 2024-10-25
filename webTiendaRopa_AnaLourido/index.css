@@ -1,0 +1,102 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: rgb(237, 230, 238);
+}
+
+h1 {
+    text-align: center;
+    color: #3b3036;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 250%;
+}
+
+.catalog {
+    float: left;
+    /* Para alinear el catálogo a la izquierda */
+    width: 70%;
+    /* Ancho del catálogo */
+    border-right: 1px solid #ccc;
+    /* Borde derecho */
+    padding-right: 20px;
+    /* Espacio entre el borde y los productos */
+    margin-right: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.product {
+    width: 300px;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #4f3342;
+    border-radius: 5px;
+    background-color: #e6cad9;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.product h3 {
+    text-align: center;
+    border-bottom: 1px solid #4f3342;
+    padding-bottom: 5px;
+}
+
+.product .description {
+    margin-top: 10px;
+}
+
+.container {
+    display: flex;
+}
+
+.catalog {
+    color: #3b3036;
+    flex: 1;
+}
+
+.cart {
+    float: left;
+    /* Para alinear el carrito a la izquierda */
+    width: 30%;
+    /* Ancho del carrito */
+    padding-left: 20px;
+    color: #3b3036;
+    width: 300px;
+    margin-left: 20px;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 10px;
+    /* Espacio entre el texto del producto y el botón */
+}
+
+button {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    background-color: #3b3036;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5%;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4b3e45;
+}
+
+button.eliminar {
+    background-color: #d3d3d3;
+    color: rgb(84, 78, 78);
+    padding: 5px 5px;
+    border: none;
+    cursor: pointer;
+}
