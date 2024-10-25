@@ -1,0 +1,28 @@
+body {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 9px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+section {
+    flex: 1;
+}
+
+footer{
+    align-self: flex-end;
+}
+
+button:hover {
+    background-color: #0056ff;
+}
