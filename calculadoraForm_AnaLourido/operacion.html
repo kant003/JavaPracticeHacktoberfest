@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Operaciones</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form action="procesar_operacion.php" method="post" class="container">
+        <h1>Operaciones Matemáticas</h1>
+
+        <label for="numero1">Introduzca el primer número:</label>
+        <input type="number" id="numero1" name="numero1" required>
+
+        <label for="numero2">Introduzca el segundo número:</label>
+        <input type="number" id="numero2" name="numero2" required>
+
+        <label>Seleccione la operación:</label>
+        <div class="radio-group">
+            <div>
+                <input type="radio" id="suma" name="operacion" value="suma">
+                <label for="suma">Suma</label>
+            </div>
+            <div>
+                <input type="radio" id="resta" name="operacion" value="resta">
+                <label for="resta">Resta</label>
+            </div>
+            <div>
+                <input type="radio" id="producto" name="operacion" value="producto">
+                <label for="producto">Producto</label>
+            </div>
+            <div>
+                <input type="radio" id="cociente" name="operacion" value="cociente" checked>
+                <label for="cociente">Cociente</label>
+            </div>
+        </div>
+
+        <input type="submit" value="Enviar datos">
+    </form>
+</body>
+
+</html>
