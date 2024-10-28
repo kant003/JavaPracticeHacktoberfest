@@ -1,0 +1,38 @@
+# Conversor de temperatura
+
+def celsius_a_fahrenheit(celsius):
+    return (celsius * 9/5) + 32
+
+def fahrenheit_a_celsius(fahrenheit):
+    return (fahrenheit - 32) * 5/9
+
+def main():
+    while True:
+        print("Que quieres hacer?:")
+        print("1: Celsius a Fahrenheit")
+        print("2: Fahrenheit a Celsius")
+        print("3: Salir")
+
+        opcion = input()
+
+        if opcion == '1':
+                celsius = float(input("Introduce la temperatura en grados Celsius: "))
+                fahrenheit = celsius_a_fahrenheit(celsius)
+                print(f"{celsius} °C son {fahrenheit} °F")
+
+
+        elif opcion == '2':
+                fahrenheit = float(input("Introduce la temperatura en grados Fahrenheit: "))
+                celsius = fahrenheit_a_celsius(fahrenheit)
+                print(f"{fahrenheit} °F son {celsius} °C")
+
+
+        elif opcion == '3':
+            print("Hasta luego")
+            break
+
+        else:
+            print("Escribe un número por favor")
+
+if __name__ == "__main__":
+    main()
