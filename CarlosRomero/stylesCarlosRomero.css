@@ -1,0 +1,102 @@
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1{
+    font-family: 'Press Start 2P', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    color: rgb(235, 194, 15);
+    shape-outside: 2px solid black;
+    text-shadow: 
+        -2px -2px 0 #000,  
+         2px -2px 0 #000,
+        -2px  2px 0 #000,
+         2px  2px 0 #000; 
+}
+
+body {
+    background-image: url("https://preview.redd.it/me2fhc4zfbf31.png?auto=webp&s=17e65613070edb3ee0c84edf9adf64a56320ab5c");
+    background-size: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    text-align: center; 
+    flex-direction: column; 
+}
+
+.boton1{
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    
+}
+
+.pokemonUsuario{
+    margin-top: 15px;
+    font-size: 150%;
+    width: 12em;
+}
+
+.imagenPokemon{
+    filter: invert(0) brightness(0);
+    width: 13em;
+} 
+
+.imagenNegro{
+    filter: invert(0) brightness(0);
+    width: 15%;
+} 
+
+.imagenColor{
+    filter: invert(0) brightness(1);
+    width: 15%;
+} 
+
+.ability{
+    font-size: 15px;
+    font-family: 'Press Start 2P', sans-serif;
+    color: rgb(235, 194, 15);
+    shape-outside: 2px solid black;
+}
+
+.cuadrado {
+    position: absolute;
+    right: 0;
+    width: 30vw;           
+    height: 100%; 
+    top: 0;          
+    background-color: #ff3c00;
+    position: fixed;
+}
+
+.cuadrado2 {
+    position: absolute;
+    position: fixed;
+
+    left: 0;
+    width: 30vw;           
+    height: 100%; 
+    top: 0;          
+    background-color: #ffffff;
+}
+
+.aciertos{
+    font-size: 15px;
+    font-family: 'Press Start 2P', sans-serif;
+    color: rgb(235, 194, 15);
+    shape-outside: 2px solid black;
+    
+}
+
+.record{
+    font-size: 15px;
+    font-family: 'Press Start 2P', sans-serif;
+    color: rgb(255, 91, 62);
+    shape-outside: 2px solid black;
+    
+}
