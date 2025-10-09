@@ -7,38 +7,32 @@ public class Uno {
 
 	// Celcius a Fahrenheit
 	static double Celcius_a_Fahrenheit(double Celcius) {
-		double Fahrenheit = (Celcius * 9 / 5) + 32;
-		return Fahrenheit;
+		return (double) (Celcius * 9 / 5) + 32;
 	}
 
 	// Celcius a Kelvin
 	static double Celcius_a_Kelvin(double Celcius) {
-		double Kelvin = Celcius + 273.15;
-		return Kelvin;
+		return (double) Celcius + 273.15;
 	}
 
 	// Fahrenheit a Celcius
 	static double Fahrenheit_a_Celcius(double Fahrenheit) {
-		double Celcius = (Fahrenheit - 32) * 5 / 9;
-		return Celcius;
+		return (double) (Fahrenheit - 32) * 5 / 9;
 	}
 
 	// Fahrenheit a Kelvin
 	static double Fahrenheit_a_Kelvin(double Fahrenheit) {
-		double Kelvin = (Fahrenheit - 32) * 5 / 9 + 273.15;
-		return Kelvin;
+		return (double) (Fahrenheit - 32) * 5 / 9 + 273.15;
 	}
 
 	// Kelvin a Celcius
 	static double Kelvin_a_Celcius(double Kelvin) {
-		double Celcius = Kelvin - 273.15;
-		return Celcius;
+		return Kelvin - 273.15;
 	}
 
 	// Kelvin a Fahrenheit
 	static double Kelvin_a_Fahrenheit(double Kelvin) {
-		double Fahrenheit = (Kelvin - 273.15) * 9 / 5 + 32;
-		return Fahrenheit;
+		return (double) (Kelvin - 273.15) * 9 / 5 + 32;
 	}
 
 	// Lee el Valor de Temperatura
