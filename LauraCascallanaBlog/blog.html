@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+<head><script src="../assets/js/color-modes.js"></script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.111.3">
+  <title>Blog</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/blog/">
+
+
+
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .b-example-divider {
+      width: 100%;
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
+
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .btn-bd-primary {
+      --bd-violet-bg: #712cf9;
+      --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+      --bs-btn-font-weight: 600;
+      --bs-btn-color: var(--bs-white);
+      --bs-btn-bg: var(--bd-violet-bg);
+      --bs-btn-border-color: var(--bd-violet-bg);
+      --bs-btn-hover-color: var(--bs-white);
+      --bs-btn-hover-bg: #6528e0;
+      --bs-btn-hover-border-color: #6528e0;
+      --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+      --bs-btn-active-color: var(--bs-btn-hover-color);
+      --bs-btn-active-bg: #5a23c8;
+      --bs-btn-active-border-color: #5a23c8;
+    }
+    .bd-mode-toggle {
+      z-index: 1500;
+    }
+    body{
+      background-color: whitesmoke;
+    }
+    .portada{
+      background-image: url("fondos.jpg");
+    }
+    .blog-footer{
+      margin-left: 100px;
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="blog.css" rel="stylesheet">
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="check2" viewBox="0 0 16 16">
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+  <symbol id="circle-half" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+  </symbol>
+  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+  </symbol>
+  <symbol id="sun-fill" viewBox="0 0 16 16">
+    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+  </symbol>
+</svg>
+
+<div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+  <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+          id="bd-theme"
+          type="button"
+          aria-expanded="false"
+          data-bs-toggle="dropdown"
+          aria-label="Toggle theme (auto)">
+    <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+    <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+    <li>
+      <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+        <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+        Light
+        <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+        <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+        Dark
+        <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+        <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>
+        Auto
+        <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+      </button>
+    </li>
+  </ul>
+</div>
+
+
+<div class="container">
+  <header class="blog-header lh-1 py-3">
+    <div class="row flex-nowrap justify-content-between align-items-center">
+      <div class="col-4 pt-1">
+        <a class="link-secondary" href="#">Subscribe</a>
+      </div>
+      <div class="col-4 text-center">
+        <a class="blog-header-logo text-body-emphasis" href="#">Large</a>
+      </div>
+      <div class="col-4 d-flex justify-content-end align-items-center">
+        <a class="link-secondary" href="#" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
+        </a>
+        <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-scroller py-1 mb-2">
+    <nav class="nav d-flex justify-content-between">
+      <a class="p-2 link-secondary" href="#">Egipto</a>
+      <a class="p-2 link-secondary" href="#">Mesopotámico</a>
+      <a class="p-2 link-secondary" href="#">Grecia</a>
+      <a class="p-2 link-secondary" href="#">Roma</a>
+      <a class="p-2 link-secondary" href="#">Bizantino</a>
+      <a class="p-2 link-secondary" href="#">Románico</a>
+      <a class="p-2 link-secondary" href="#">Gótico</a>
+      <a class="p-2 link-secondary" href="#">Renacimiento</a>
+      <a class="p-2 link-secondary" href="#">Barroco</a>
+      <a class="p-2 link-secondary" href="#">Realismo</a>
+      <a class="p-2 link-secondary" href="#">Impresionismo</a>
+      <a class="p-2 link-secondary" href="#">Expresionismo</a>
+    </nav>
+  </div>
+</div>
+
+<main class="container">
+  <div class="portada">
+    <div class="p-4 p-md-5 mb-4 rounded ">
+      <div class="col-md-6 px-0">
+        <h1 class="display-4 fst-italic text-white">Un paseo por el Louvre</h1>
+        <p class="lead my-3 text-white">Un recorrido por uno de los museos más emblemáticos del mundo</p>
+        <p class="lead mb-0"><a href="##texto" class="text-white fw-bold">Seguir leyendo....</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <div class="titulito1">
+            <strong class="d-inline-block mb-2">Qué más ver</strong>
+          </div>
+          <h3 class="mb-0">La Torre Eiffel</h3>
+          <p class="card-text mb-auto">La Torre Eiffel es una icónica estructura de hierro de 324 metros de
+            altura. Fue construida en 1889, actualmente atrae a millones de visitantes cada año.</p>
+          <a href="https://www.toureiffel.paris/es" class="stretched-link">Más información</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="La-Torre-Eiffel.jpg" width="250px" height="250px">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <div class="titulito2">
+            <strong class="d-inline-block mb-2">Qué más ver</strong>
+          </div>
+          <h3 class="mb-0">El arco del triunfo</h3>
+          <p class="mb-auto">El Arco del Triunfo es un monumento construido en honor a los soldados franceses
+            que lucharon en las guerras napoleónicas. </p>
+          <a href="https://www.paris.es/arco-triunfo" class="stretched-link">Más información</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="ArcoTriunfo.jpg" width="250px" height="250px">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-5">
+    <div class="col-md-8">
+      <article class="blog-post">
+        <h2 class="blog-post-title mb-1">El museo del louvre</h2>
+        <p class="blog-post-meta">Laura Cascallana</p>
+        <br>
+        <img src="MuseoLouvre.jpeg" width="500" height="300">
+        <br>
+        <br>
+        <p> El Museo del Louvre es uno de los museos más grandes y famosos del mundo, ubicado en el centro de París, Francia.
+          El museo cuenta con una extensa colección de arte que abarca desde la antigüedad hasta el siglo XIX.
+          La colección incluye obras de maestros como Leonardo da Vinci, Rembrandt, Vermeer, Michelangelo y
+          Rafael, entre otros.</p>
+        <hr>
+        <h2>El arte en el Louvre</h2>
+        <p> La obra más famosa del Louvre es La Mona Lisa, pintada por Leonardo da Vinci, que atrae a
+          millones de visitantes cada año. Otras obras notables incluyen La Libertad Guiando al Pueblo
+          de Eugène Delacroix, La Venus de Milo, la Victoria de Samotracia y el Código de Hammurabi.</p>
+        <img src="MonaLisa.jpg" width="300" height="400">
+        <br/>
+        <p class="blog-post-meta">La Mona Lisa, 1503</p>
+        <br/>
+        <img src="LibertadGuiando.jpg" width="500" height="400">
+        <br/>
+        <p class="blog-post-meta">La libertad Guiando al pueblo, 1830</p>
+        <br/>
+        <p>Además de estas obras, el museo cuenta con una gran cantidad de pinturas, esculturas y objetos
+          de arte de diversas épocas y culturas. Es imposible ver todo el museo en un solo día, pero cada
+          pieza es única y vale la pena explorarla en detalle.</p>
+        <h2>Su arquitectura</h2>
+        <p>El exterior del Museo del Louvre es tan impresionante como su interior. El edificio principal del
+          museo es una obra maestra arquitectónica en sí misma, con una mezcla de estilos clásicos y modernos.</p>
+
+        <p>La fachada principal del Louvre está compuesta por una serie de alas que se extienden desde el
+          edificio principal en forma de "U". Las dos alas laterales están conectadas por una estructura de
+          cristal y metal llamada la Pirámide del Louvre, que se ha convertido en un icono moderno de París.</p>
+
+        <img src="MuseoDelLouvre.jpg" width="600" height="400">
+
+        <br>
+        <p class="blog-post-meta">Fachada principal</p>
+        <img src="Aereo.jpg" width="600" height="400">
+        <br>
+        <p class="blog-post-meta">Visión aérea</p>
+        <br>
+        <p>La pirámide fue diseñada por el arquitecto I. M. Pei y se inauguró en 1989. Tiene 21,6 metros
+          de altura y está compuesta por 603 diamantes de cristal y 70 toneladas de acero. Es una entrada
+          impresionante al museo y también sirve como punto de referencia en la ciudad.</p>
+        <img src="Piramide.jpg" width="700" height="400">
+        <br>
+        <p>Además de la pirámide, el exterior del Louvre también cuenta con hermosos jardines y patios
+          interiores, como el Patio de Napoleón y el Jardín de las Tullerías. Estos espacios verdes ofrecen
+          un respiro tranquilo del bullicio de la ciudad y son un lugar popular para relajarse y disfrutar
+          del paisaje.</p>
+        <img src="Jardines.jpg" width="600" height="400">
+        <br>
+        <br>
+
+      <nav class="blog-pagination" aria-label="Pagination">
+        <a class="btn btn-outline-primary rounded-pill" href="https://www.louvre.fr/es">Página oficial</a>
+        <a class="btn btn-outline-secondary rounded-pill" href="#">Inicio</a>
+      </nav>
+      <br>
+
+    </div>
+
+    <div class="col-md-4">
+      <div class="position-sticky" style="top: 2rem;">
+        <div class="p-4 mb-3 bg-body-tertiary rounded">
+          <h4 class="fst-italic">Dato Curioso</h4>
+          <p class="mb-0">Un dato curioso del Museo del Louvre es que, aunque es famoso por su impresionante
+            colección de arte, también alberga algunas instalaciones modernas sorprendentes. Por ejemplo,
+            en 1985 el artista francés Daniel Buren creó una instalación llamada "Les Deux Plateaux" en el
+            patio central del Louvre. La instalación consiste en 260 columnas de diferentes alturas y tamaños,
+            cubiertas con bandas blancas y negras, que crean un efecto visual impresionante.</p>
+        </div>
+
+        <div class="p-4">
+          <h4 class="fst-italic">Archivos</h4>
+          <ol class="list-unstyled mb-0">
+            <li><a href="#">Egipto</a></li>
+            <li><a href="#">Mesopotámico</a></li>
+            <li><a href="#">Grecia</a></li>
+            <li><a href="#">Roma</a></li>
+            <li><a href="#">Bizantino</a></li>
+            <li><a href="#">Románico</a></li>
+            <li><a href="#">Gótico</a></li>
+            <li><a href="#">Renacimiento</a></li>
+            <li><a href="#">Barroco</a></li>
+            <li><a href="#">Realismo</a></li>
+            <li><a href="#">Impresionismo</a></li>
+            <li><a href="#">Expresionismo</a></li>
+          </ol>
+        </div>
+
+        <div class="p-4">
+          <h4 class="fst-italic">Más</h4>
+          <ol class="list-unstyled">
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Facebook</a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+</body>
+</html>
