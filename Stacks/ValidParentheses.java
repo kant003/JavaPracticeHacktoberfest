@@ -57,7 +57,7 @@ public final class ValidParentheses {
     }
 
     /**
-     * Example usage.
+     * Example usage
      */
     public static void main(final String[] args) {
         System.out.println(isValid("()[]{}")); // true
