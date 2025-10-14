@@ -15,7 +15,7 @@ body {
   overflow-x: hidden;
 }
 
-/* 🎵 Encabezado */
+
 header {
   text-align: center;
   margin-top: 2rem;
@@ -30,7 +30,7 @@ h1 {
   letter-spacing: 1px;
 }
 
-/* 🧱 Contenedor principal del piano */
+
 .container {
   position: relative;
   display: flex;
@@ -41,7 +41,7 @@ h1 {
   padding: 1rem;
 }
 
-/* ⚪ Teclas blancas */
+
 .white-key {
   background: linear-gradient(to bottom, #fdfdfd, #e0e0e0);
   border: 1px solid #bbb;
@@ -65,7 +65,7 @@ h1 {
   box-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
-/* ⚫ Teclas negras */
+
 .black-key {
   background: linear-gradient(to bottom, #333, #000);
   width: 40px;
@@ -92,19 +92,19 @@ h1 {
   box-shadow: 0 2px 4px rgba(0,0,0,0.8);
 }
 
-/* 🎶 Posiciones relativas para las negras */
+
 .white-key:nth-child(1)  ~ .black-key[data-note="C#4"] { left: 45px; }
 .white-key:nth-child(3)  ~ .black-key[data-note="D#4"] { left: 105px; }
 .white-key:nth-child(6)  ~ .black-key[data-note="F#4"] { left: 225px; }
 .white-key:nth-child(8)  ~ .black-key[data-note="G#4"] { left: 285px; }
 .white-key:nth-child(10) ~ .black-key[data-note="A#4"] { left: 345px; }
 
-/* 💡 Efecto al pasar el ratón */
+
 .key:hover {
   filter: brightness(1.1);
 }
 
-/* 📱 Responsivo */
+
 @media (max-width: 700px) {
   .white-key {
     width: 40px;
