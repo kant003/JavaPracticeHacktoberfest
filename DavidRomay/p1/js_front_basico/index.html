@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        background-color: hotpink;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="handleClick()">Pulsame</button>
+    <button id="pulsame2">Pulsame</button>
+
+    <script>
+      document
+        .getElementById("pulsame2")
+        .addEventListener("click", handleClick);
+      function handleClick() {
+        console.log("Me has pulsado");
+        alert("Me has pulsado!!!!!!!!!!!!!");
+      }
+      console.log("Hola Mundo");
+    </script>
+  </body>
+</html>
