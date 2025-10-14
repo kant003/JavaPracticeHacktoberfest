@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blackjack JS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Blackjack JS</h1>
+
+  <section class="juego">
+    <div class="jugador">
+      <h2>Jugador</h2>
+      <p class="mano" id="jugador-mano"></p>
+      <p>Puntos: <span id="jugador-puntos">0</span></p>
+    </div>
+
+    <div class="dealer">
+      <h2>Dealer</h2>
+      <p class="mano" id="dealer-mano"></p>
+      <p>Puntos: <span id="dealer-puntos">0</span></p>
+    </div>
+  </section>
+
+  <section class="controles">
+    <button id="hit">Pedir carta</button>
+    <button id="stand">Plantarse</button>
+    <button id="nuevo">Nuevo juego</button>
+  </section>
+
+  <p id="resultado"></p>
+
+  <script src="main.js"></script>
+</body>
+</html>
