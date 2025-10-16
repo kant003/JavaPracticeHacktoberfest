@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kikegordo - MLG Edition</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff0000);
+            background-size: 400% 400%;
+            animation: bgShift 2s ease-in-out infinite;
+            font-family: 'Arial Black', sans-serif;
+            overflow: hidden;
+        }
+
+        @keyframes bgShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .mlg-text {
+            font-size: 5em;
+            font-weight: bold;
+            color: #00ff00;
+            text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 80px #00ff00;
+            animation: spin 1s linear infinite, glow 0.5s ease-in-out infinite alternate, shake 0.1s ease-in-out infinite, colorCycle 1s ease-in-out infinite;
+            position: relative;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00; }
+            to { text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00; }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10% { transform: translateX(-5px) translateY(-5px); }
+            20% { transform: translateX(5px) translateY(5px); }
+            30% { transform: translateX(-5px) translateY(5px); }
+            40% { transform: translateX(5px) translateY(-5px); }
+            50% { transform: translateX(-2px) translateY(2px); }
+            60% { transform: translateX(2px) translateY(-2px); }
+            70% { transform: translateX(-2px) translateY(-2px); }
+            80% { transform: translateX(2px) translateY(2px); }
+            90% { transform: translateX(-1px) translateY(1px); }
+        }
+
+        @keyframes colorCycle {
+            0% { color: #00ff00; }
+            25% { color: #ff00ff; }
+            50% { color: #00ffff; }
+            75% { color: #ffff00; }
+            100% { color: #00ff00; }
+        }
+
+        .mlg-text::before {
+            content: 'kikegordo';
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #ff0000;
+            text-shadow: 0 0 5px #ff0000;
+            animation: glitch1 0.3s ease-in-out infinite;
+            clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+        }
+
+        .mlg-text::after {
+            content: 'kikegordo';
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #0000ff;
+            text-shadow: 0 0 5px #0000ff;
+            animation: glitch2 0.3s ease-in-out infinite;
+            clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+        }
+
+        @keyframes glitch1 {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+        }
+
+        @keyframes glitch2 {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(2px, -2px); }
+            40% { transform: translate(2px, 2px); }
+            60% { transform: translate(-2px, -2px); }
+            80% { transform: translate(-2px, 2px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="mlg-text">kikegordo</div>
+</body>
+</html>
