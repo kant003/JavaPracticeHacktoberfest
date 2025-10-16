@@ -1,7 +1,7 @@
 const input = document.querySelector('input');
 const result = document.querySelector('.result');
 const sound = document.querySelector('.sound');
-
+//h
 const reset = () => input.value = '';
 
 async function getData(word) {
