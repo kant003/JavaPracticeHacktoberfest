@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
         sibling.classList.toggle(className, add);
       }
     };
-    
+    //h
     navItems.forEach((item, index) => {
       item.addEventListener('mouseenter', () => {
         item.classList.add('hover'); 
