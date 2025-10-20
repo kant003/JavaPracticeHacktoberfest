@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+  color: #333;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.left-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  font-size: 3rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.8s ease-in;
+}
+
+#Contador {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: bold;
+  color: #ffd700;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  animation: pulse 2s infinite;
+}
+
+#imagen-click {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+  border-radius: 20px;
+  background: white;
+  padding: 20px;
+}
+
+#imagen-click:hover {
+  transform: scale(1.05);
+}
+
+#imagen-click:active {
+  transform: scale(0.95);
+  animation: click-animation 0.3s ease;
+}
+
+.tienda {
+  margin-top: 10%;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  min-width: 350px;
+  animation: slideIn 0.8s ease-out;
+}
+
+.tienda h2 {
+  color: #667eea;
+  font-size: 1.8rem;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  border-bottom: 3px solid #764ba2;
+  padding-bottom: 10px;
+}
+
+.tienda h2:first-child {
+  margin-top: 0;
+}
+
+.tienda p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0;
+}
+
+.boton {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  margin: 10px 5px;
+}
+
+.boton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.boton:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(102, 126, 234, 0.4);
+}
+
+.tienda span {
+  display: inline-block;
+  background: #ffd700;
+  color: #333;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-left: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes click-animation {
+  0% {
+    transform: scale(0.95);
+  }
+  50% {
+    transform: scale(1.1) rotate(5deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  #Contador {
+    font-size: 3rem;
+  }
+
+  #imagen-click {
+    width: 200px;
+    height: 200px;
+  }
+
+  .tienda {
+    min-width: 280px;
+  }
+
+  .main-container {
+    gap: 20px;
+  }
+}
+

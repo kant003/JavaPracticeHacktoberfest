@@ -12,8 +12,9 @@ public class Factorial {
         long factorial = 1;
 
         // Algoritmo iterativo para calcular el factorial
-        for (int i = 1; i <= n; i++) {
-            factorial *= i;  // factorial = factorial * i
+        while(n != 0){
+            factorial *= n;
+            n -= 1;
         }
 
         // Mostramos el resultado
