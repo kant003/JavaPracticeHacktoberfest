@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Batman API — Demo</title>
+    <style>
+        body {
+            font-family: system-ui, Arial;
+            max-width: 980px;
+            margin: 24px auto;
+            padding: 0 16px;
+        }
+
+        header {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .controls {
+            margin: 12px 0;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            padding: 12px;
+            border-radius: 8px;
+            background: #fff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+        }
+
+        .card img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 6px;
+            background: #f0f0f0;
+        }
+
+        .meta {
+            font-size: 0.9rem;
+            color: #555;
+            margin-top: 8px;
+        }
+
+        .pager {
+            margin-top: 12px;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            word-break: break-word;
+            background: #f8f8f8;
+            padding: 8px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Batman API Pocha</h1>
+        <small style="color:#666">Desgraciadamente no tiene imagenes D:</small>
+    </header>
+
+    <div class="controls">
+        <label>
+            Buscar por nombre:
+            <input id="q" placeholder="Ej: paco" />
+        </label>
+
+
+        <button id="applyBtn">Aplicar</button>
+    </div>
+
+    <div id="results" class="grid"></div>
+
+    <hr />
+    <h3>Detalle (JSON)</h3>
+    <pre id="detail">Selecciona un personaje para ver su JSON aquí.</pre>
+
+    <script src="batman.js"></script>
+</body>
+
+</html>
