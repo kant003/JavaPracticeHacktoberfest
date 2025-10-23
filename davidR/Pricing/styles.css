@@ -1,0 +1,10 @@
+.city-img {
+  height: 180px;
+  object-fit: cover;
+}
+
+.price {
+  font-weight: 700;
+  color: #007bff;
+  margin-bottom: 1rem;
+}

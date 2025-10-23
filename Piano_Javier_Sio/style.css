@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #1a1a1a 0%, #000 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+
+header {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #f3f3f3;
+  letter-spacing: 1px;
+}
+
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0;
+  user-select: none;
+  padding: 1rem;
+}
+
+
+.white-key {
+  background: linear-gradient(to bottom, #fdfdfd, #e0e0e0);
+  border: 1px solid #bbb;
+  width: 60px;
+  height: 220px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin: 0 2px;
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  position: relative;
+  z-index: 1;
+}
+
+.white-key:active {
+  background: linear-gradient(to bottom, #ccc, #999);
+  transform: translateY(2px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+
+.black-key {
+  background: linear-gradient(to bottom, #333, #000);
+  width: 40px;
+  height: 140px;
+  position: absolute;
+  border-radius: 0 0 4px 4px;
+  top: 0;
+  z-index: 2;
+  margin-left: -20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  color: #eee;
+  font-size: 0.8rem;
+  justify-content: center;
+  align-items: flex-end;
+  display: flex;
+  padding-bottom: 8px;
+}
+
+.black-key:active {
+  background: linear-gradient(to bottom, #111, #555);
+  transform: translateY(2px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+
+.white-key:nth-child(1)  ~ .black-key[data-note="C#4"] { left: 45px; }
+.white-key:nth-child(3)  ~ .black-key[data-note="D#4"] { left: 105px; }
+.white-key:nth-child(6)  ~ .black-key[data-note="F#4"] { left: 225px; }
+.white-key:nth-child(8)  ~ .black-key[data-note="G#4"] { left: 285px; }
+.white-key:nth-child(10) ~ .black-key[data-note="A#4"] { left: 345px; }
+
+
+.key:hover {
+  filter: brightness(1.1);
+}
+
+
+@media (max-width: 700px) {
+  .white-key {
+    width: 40px;
+    height: 150px;
+    font-size: 0.8rem;
+  }
+
+  .black-key {
+    width: 25px;
+    height: 90px;
+    font-size: 0.6rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}

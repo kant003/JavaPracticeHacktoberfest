@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>document</title>
+</head>
+<body>
+
+<!-- THEN -->
+<button id="btn">Obtener personaje rick & morty</button>
+<div id="output"></div>
+
+<script>
+    const TOTAL_CHARACTERS = 826
+    const getRandomNum = () => Math.floor(Math.random() * TOTAL_CHARACTERS) + 1
+
+    document.getElementById('btn').addEventListener('click', () => {
+        const randomNum = getRandomNum()
+        fetch('https://rickandmortyapi.com/api/character/' + randomNum)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('output').innerHTML = `
+                <h2>${data.name}</h2>
+                <img src="${data.image}"/>
+                `
+            })
+    })
+</script>
+
+</body>
+</html>

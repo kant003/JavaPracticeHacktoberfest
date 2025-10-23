@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<button id="btn">Obtener pokemon con Promesas (async/await) de golpe primse all</button>
+<div id="output"></div>
+<script>
+    const URL_BASE = 'https://pokeapi.co/api/v2/pokemon/'
+    const TOTAL_POKEMONS = 1025
+    const getRandomNum = () => Math.floor(Math.random() * TOTAL_POKEMONS) + 1
+
+    // conectarme con el api de pokemon para obtener un pokemon
+    async function getPokemon(id) {
+        const response = await fetch(URL_BASE + id)
+        return await response.json()
+    }
+
+    document.getElementById('btn').addEventListener('click', async () => {
+        //Limpiamos el output
+        document.getElementById('output').innerHTML = ''
+
+        // Obtener un numero aleatorio 0 al x
+        const randomNum = getRandomNum()
+
+        //Arrays de ids
+        const ids = Array.from({length: 5}, getRandomNum)
+
+        //Orden superior map || Es un array de PROMESAS
+        const promesas = ids.map(id => getPokemon(id))
+
+        //Promise.all para resolver todas las promesas
+        const pokemons = await Promise.all(promesas)
+
+        //Recorremos con forEach el array de pokemons
+        pokemons.forEach(pokemon => {
+            document.getElementById('output').innerHTML += `
+                            <h2>${pokemon.name}</h2>
+                            <img src="${pokemon.sprites.front_default}"/>
+                    `
+        })
+    })
+</script>
+</body>
+
+</html>
