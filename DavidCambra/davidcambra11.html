@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: lightblue;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(45deg, #412a27, #81334e, #3e8ae0);
+            background-size: 300% 300%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            outline: none;
+            animation: gradientAnimation 5s infinite;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <button id="confettiButton" aria-label="Lanzar confetti">Pulsame!</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script>
+        const button = document.getElementById('confettiButton');
+
+        button.addEventListener('click', () => {
+            confetti({
+                particleCount: 120,
+                angle: 60,
+                spread: 100,
+                origin: { x: 0.5, y: 0.5 },
+                colors: ['#ff6f61', '#4a90e2', '#50c878']
+            });
+
+            confetti({
+                particleCount: 120,
+                angle: 120,
+                spread: 100,
+                origin: { x: 0.5, y: 0.5 },
+                colors: ['#ff6f61', '#4a90e2', '#50c878']
+            });
+        });
+    </script>
+</body>
+
+</html>
