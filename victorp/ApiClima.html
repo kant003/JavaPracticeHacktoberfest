@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!-- usando el api de https://wttr.in/vigo?format=j1
+
+    Haz una app web que permita escribir la localizacion en una
+    caja de texto y nuestro la temperatura media para hoy, mañana y pasado
+
+    puedes usar then o async/await
+
+    -->
+
+<!-- Boton -->
+<button id="btn">Obtener el clima</button>
+<div id="output"></div>
+
+<script>
+    const URL_BASE = 'https://wttr.in/vigo?format=j1'
+
+    //Nos conectamos al api del clima
+    async function getClima() {
+        const response = await fetch(URL_BASE)
+        return await response.json()
+    }
+
+    //Click boton
+    document.getElementById('btn').addEventListener('click', async () => {
+        //Limpiamos el output
+        document.getElementById('output').innerHTML = ''
+
+        //Obtener clima
+        const climas = await getClima()
+
+        //Numero de dias
+        const dias = [0,1,2]
+
+        //Recorremos con forEach
+        dias.forEach(dia => {
+            let climaDia = climas.weather[dia]
+            document.getElementById('output').innerHTML += `
+                <h2>Dia: ${climaDia.date} | Temperatura media: ${climaDia.avgtempC}ºC</h2>
+            `
+        })
+    })
+</script>
+
+</body>
+</html>

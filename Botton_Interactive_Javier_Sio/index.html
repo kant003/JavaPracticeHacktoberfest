@@ -1,0 +1,32 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Componente de Calificación</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="card" id="rating-card">
+    <div class="star-icon">★</div>
+    <h2>¿Cómo lo hicimos?</h2>
+    <p>Por favor, dime  si te gusta.¡Valora la el programa!</p>
+    <div class="ratings">
+      <button class="rate-btn">1</button>
+      <button class="rate-btn">2</button>
+      <button class="rate-btn">3</button>
+      <button class="rate-btn">4</button>
+      <button class="rate-btn">5</button>
+    </div>
+    <button id="submit-btn">Enviar</button>
+  </main>
+
+  <main class="card hidden" id="thank-you-card">
+    <img src="images/illustration-thank-you.svg" alt="Gracias" class="thank-img" />
+    <p class="selected-text">Seleccionaste <span id="selected-rating"></span> de 5</p>
+    <h2>¡Gracias!</h2>
+    <p>Gracias por tomarte el tiempo para darnos una calificación. Si necesitas más ayuda, contáctanos.</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

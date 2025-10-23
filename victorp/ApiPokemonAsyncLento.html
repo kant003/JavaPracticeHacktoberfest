@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<button id="btn">Obtener pokemon con Promesas (async/await) poco a poco con un bucle for</button>
+<div id="output"></div>
+<script>
+    const URL_BASE = 'https://pokeapi.co/api/v2/pokemon/'
+    const TOTAL_POKEMONS = 1025
+    const getRandomNum = () => Math.floor(Math.random() * TOTAL_POKEMONS) + 1
+
+    // conectarme con el api de pokemon para obtener un pokemon
+    async function getPokemon(id) {
+        const response = await fetch(URL_BASE + id)
+        return await response.json()
+    }
+
+    document.getElementById('btn').addEventListener('click', async () => {
+        document.getElementById('output').innerHTML = ''
+        // LLamamos a la funcion anterior y mostramos el resultado en el html
+        for (let i = 0; i < 5; i++) {
+            // Obtener un numero aleatorio 0 al x
+            const randomNum = getRandomNum()
+            try {
+                const data = await getPokemon(randomNum)
+                document.getElementById('output').innerHTML += `
+                            <h2>${data.name}</h2>
+                            <img src="${data.sprites.front_default}"/>
+                    `
+            } catch (error) {
+                document.getElementById('output').textContent = 'Error al obtener el pokemon' + error
+            }
+        }
+    })
+</script>
+</body>
+
+</html>
