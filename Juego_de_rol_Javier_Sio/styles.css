@@ -1,0 +1,79 @@
+body {
+  background-image: url("Dragon.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
+#game {
+  max-width: 600px;
+  margin: 50px auto;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  padding: 20px;
+}
+
+#text {
+  background-color: rgba(10, 10, 35, 0.9);
+  color: #ffffff;
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 5px;
+  font-size: 1.1em;
+  line-height: 1.5em;
+}
+
+#controls, #stats, #monsterStats {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#stats {
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+#controls {
+  background-color: rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#monsterStats {
+  background-color: rgba(199, 13, 13, 0.9);
+  color: #ffffff;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  font-weight: bold;
+}
+
+.stat {
+  padding-right: 10px;
+}
+
+button {
+  cursor: pointer;
+  padding: 10px 15px;
+  background-color: #feac32;
+  background-image: linear-gradient(#fecc4c, #ffac33);
+  border: 2px solid #feac32;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: bold;
+  color: #0a0a23;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-image: linear-gradient(#ffd76f, #fca72d);
+}

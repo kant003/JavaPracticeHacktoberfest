@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>r</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Kitty</h1>
+        <p>Primo de Rivera did nothing wrong</p>
+        <button id="btn">Meow</button>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        document.getElementById('btn').addEventListener('click', async() => {            
+            try{
+                const response = await fetch(`https://api.thecatapi.com/v1/images/search?api_key=live_nVRSmr9HppE7yyaK7MSvu9vQOgevDVBvjLRGj0EukMfH7VVZkcjSnLEyjZMkzybR`)
+                const data = await response.json()
+
+                document.getElementById('output').innerHTML = `
+                <img src="${data[0].url}" style="max-width: 100%; height: auto;"/>
+            `
+            }catch(error){
+                document.getElementById('output').textContent = 'Error al obtener el kitty'
+            }
+        })
+    </script>
+</body>
+</html>
+
