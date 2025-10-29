@@ -1,0 +1,142 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.container {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  padding: 3rem 2.5rem;
+  width: 90%;
+  max-width: 400px;
+  color: #fff;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+}
+
+.container h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+
+.form-control {
+  position: relative;
+  width: 100%;
+}
+
+.form-control input {
+  width: 100%;
+  padding: 12px 0;
+  font-size: 1rem;
+  color: #fff;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-control input:focus {
+  border-bottom-color: #00e0ff;
+}
+
+
+.form-control label {
+  position: absolute;
+  left: 0;
+  top: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+
+.form-control input:focus + label,
+.form-control input:valid + label {
+  top: -10px;
+  font-size: 0.8rem;
+  color: #00e0ff;
+  text-shadow: 0 0 6px rgba(0, 224, 255, 0.4);
+}
+
+
+.btn {
+  background: linear-gradient(135deg, #00e0ff, #0077ff);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 0 12px rgba(0, 224, 255, 0.4);
+}
+
+.btn:hover {
+  box-shadow: 0 0 20px #00e0ff;
+  transform: translateY(-2px);
+}
+
+
+.text {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.text a {
+  color: #00e0ff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.text a:hover {
+  color: #80f6ff;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container,
+.form-control,
+.btn,
+.text {
+  animation: fadeIn 0.6s ease forwards;
+}

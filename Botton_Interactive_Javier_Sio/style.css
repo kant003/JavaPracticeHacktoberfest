@@ -1,0 +1,85 @@
+body {
+    background-color: #121417;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .card {
+    background: #1f2630;
+    padding: 2rem;
+    border-radius: 15px;
+    width: 300px;
+    text-align: center;
+  }
+  
+  .star-icon {
+    background: #262f38;
+    color: orange;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    line-height: 40px;
+    margin: 0 auto 1rem;
+    font-size: 1.2rem;
+  }
+  
+  .ratings {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5rem 0;
+  }
+  
+  .rate-btn {
+    background: #262f38;
+    color: #fff;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .rate-btn:hover,
+  .rate-btn.active {
+    background: orange;
+    color: #000;
+  }
+  
+  #submit-btn {
+    background: orange;
+    border: none;
+    padding: 1rem;
+    width: 100%;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  
+  #submit-btn:hover {
+    background: #ff8c00;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .thank-img {
+    width: 100px;
+    margin-bottom: 1rem;
+  }
+  
+  .selected-text {
+    background: #262f38;
+    padding: 0.5rem;
+    border-radius: 20px;
+    color: orange;
+    margin: 1rem auto;
+    width: fit-content;
+  }

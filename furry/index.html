@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kitty</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="container">
+    <h1>MONA CHINA</h1>
+    <p>No fomento ni respeto el uso de esta api</p>
+    <button id="btn">Meow</button>
+    <div id="output"></div>
+  </div>
+
+  <script>
+    document.getElementById('btn').addEventListener('click', async () => {
+      const output = document.getElementById('output');
+      output.textContent = 'Primo de Rivera did nothing wrong';
+      try {
+        const response = await fetch('https://nekos.best/api/v2/neko');
+        const data = await response.json();
+
+        const imgUrl = data.results[0].url;
+
+        output.innerHTML = `<img src="${imgUrl}" alt="Kitty" style="max-width: 100%; height: auto; border-radius: 12px;"/>`;
+      } catch (error) {
+        output.textContent = 'Error al obtener la mona china'
+        console.error(error);
+      }
+    });
+  </script>
+</body>
+</html>

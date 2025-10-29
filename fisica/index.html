@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Simulador Interdimensional de Tostadas</title>
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            background: #0b0f17;
+            color: #e8ecf1;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+            overflow: hidden;
+        }
+
+        #c {
+            position: fixed;
+            inset: 0;
+            display: block;
+        }
+
+        .ui {
+            position: fixed;
+            left: 50%;
+            top: 24px;
+            transform: translateX(-50%);
+            background: rgba(12, 18, 28, 0.6);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 12px 14px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .title {
+            font-weight: 700;
+            letter-spacing: 0.4px;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #dbe7ff;
+            border-radius: 999px;
+            padding: 8px 12px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .pill:active {
+            transform: translateY(1px);
+        }
+
+        .switch {
+            position: relative;
+        }
+
+        .switch input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .switch .knob {
+            width: 42px;
+            height: 24px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            position: relative;
+            box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .switch .dot {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: linear-gradient(180deg, #fff, #cdd7ff);
+            transition: 0.18s ease;
+        }
+
+        .switch input:checked + .knob {
+            background: rgba(120, 200, 255, 0.18);
+        }
+
+        .switch input:checked + .knob .dot {
+            left: 20px;
+            background: linear-gradient(180deg, #8efbd3, #4de5ff);
+        }
+
+        .range {
+            appearance: none;
+            width: 160px;
+            height: 8px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #3a4a6a, #202b40);
+            outline: none;
+        }
+
+        .range::-webkit-slider-thumb {
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #ffd57e;
+            border: 2px solid #ffae00;
+            box-shadow: 0 0 10px #ffae00;
+        }
+
+        .badge {
+            padding: 6px 10px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .hint {
+            position: fixed;
+            left: 50%;
+            bottom: 22px;
+            transform: translateX(-50%);
+            opacity: 0.8;
+            background: rgba(12, 18, 28, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 8px 12px;
+        }
+
+        .glow {
+            text-shadow: 0 0 10px rgba(255, 205, 112, 0.6);
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="c"></canvas>
+
+    <div class="ui">
+        <span class="title">🥪 Simulador Interdimensional de Tostadas</span>
+        <button class="pill" id="spawn">Crear Tostada</button>
+        <button class="pill" id="burst">¡Tostar!</button>
+        <label class="pill switch">
+            <input id="grav" type="checkbox" checked>
+            <span class="knob"><span class="dot"></span></span>
+            <span>Gravedad</span>
+        </label>
+        <span class="pill">
+            Calor
+            <input id="heat" class="range" type="range" min="0" max="100" value="35">
+        </span>
+        <button class="pill" id="shuffle">Aleatorizar</button>
+        <span class="badge" id="stat">0 tostada(s)</span>
+    </div>
+
+    <div class="hint">
+        Haz clic para añadir una tostada. Pulsa T para tostar. Pulsa R para hacer llover. Pulsa G para alternar la gravedad.
+    </div>
+
+    <script>
+        const canvas = document.getElementById('c');
+        const ctx = canvas.getContext('2d');
+        let W = innerWidth, H = innerHeight;
+        canvas.width = W; canvas.height = H;
+
+        const toasts = [], sparks = [], bubbles = [];
+        let mouse = { x: W / 2, y: H / 2, down: false };
+        let heat = document.getElementById('heat').value / 100;
+        let gravity = true;
+        let toasting = false;
+        const stat = document.getElementById('stat');
+
+        // Eventos
+        addEventListener('resize', () => {
+            W = innerWidth; H = innerHeight;
+            canvas.width = W; canvas.height = H;
+        });
+
+        addEventListener('pointermove', e => { mouse.x = e.clientX; mouse.y = e.clientY });
+        addEventListener('pointerdown', e => { mouse.down = true; spawnToast(e.clientX, e.clientY) });
+        addEventListener('pointerup', () => mouse.down = false);
+        addEventListener('keydown', e => {
+            if (e.key === 't' || e.key === 'T') pulseHeat();
+            if (e.key === 'g' || e.key === 'G') toggleGravity();
+            if (e.key === 'r' || e.key === 'R') rain();
+        });
+
+        document.getElementById('heat').addEventListener('input', e => {
+            heat = e.target.value / 100;
+        });
+
+        document.getElementById('spawn').addEventListener('click', () => spawnToast(mouse.x, mouse.y));
+        document.getElementById('burst').addEventListener('click', pulseHeat);
+        document.getElementById('shuffle').addEventListener('click', randomize);
+        document.getElementById('grav').addEventListener('change', e => { gravity = e.target.checked });
+
+        // Utilidades
+        function rand(a, b) { return a + Math.random() * (b - a) }
+
+        function spawnToast(x, y) {
+            const s = rand(32, 60);
+            toasts.push({
+                x, y,
+                vx: rand(-1.2, 1.2),
+                vy: rand(-0.5, 0.5),
+                w: s,
+                h: s * 0.78,
+                a: rand(0, Math.PI * 2),
+                va: rand(-0.02, 0.02),
+                brown: 0,
+                seed: Math.random() * 1000
+            });
+            stat.textContent = `${toasts.length} tostada(s)`;
+        }
+
+        function spark(x, y, c) {
+            for (let i = 0; i < 18; i++) {
+                sparks.push({
+                    x, y,
+                    vx: Math.cos(i / 18 * Math.PI * 2) * rand(1, 3.2),
+                    vy: Math.sin(i / 18 * Math.PI * 2) * rand(1, 3.2),
+                    life: 1,
+                    col: c
+                });
+            }
+        }
+
+        function bubble(x, y) {
+            for (let i = 0; i < 10; i++) {
+                bubbles.push({
+                    x: x + rand(-20, 20),
+                    y: y + rand(-6, 6),
+                    vx: rand(-0.3, 0.3),
+                    vy: rand(-2.2, -1.2),
+                    r: rand(1, 3),
+                    a: 1
+                });
+            }
+        }
+
+        function pulseHeat() {
+            toasting = true;
+            let t = 0;
+            const id = setInterval(() => {
+                t += 0.06;
+                heat = Math.min(1, heat + 0.02);
+                if (t > 1) { clearInterval(id); toasting = false; }
+            }, 16);
+            toasts.forEach(o => { spark(o.x, o.y, '#ffd57e'); bubble(o.x, o.y) });
+        }
+
+        function toggleGravity() {
+            gravity = !gravity;
+            document.getElementById('grav').checked = gravity;
+        }
+
+        function randomize() {
+            toasts.forEach(o => {
+                o.vx = rand(-2, 2);
+                o.vy = rand(-1.5, 1.5);
+                o.va = rand(-0.03, 0.03);
+            });
+        }
+
+        function rain() {
+            for (let i = 0; i < 24; i++) spawnToast(rand(0, W), rand(-120, -20));
+        }
+
+        function bg() {
+            const g = ctx.createRadialGradient(W * 0.5, H * 0.55, 10, W * 0.5, H * 0.55, Math.hypot(W, H) * 0.7);
+            g.addColorStop(0, '#0b1324');
+            g.addColorStop(1, '#05070d');
+            ctx.fillStyle = g;
+            ctx.fillRect(0, 0, W, H);
+
+            for (let i = 0; i < 8; i++) {
+                const r = 120 + Math.sin(Date.now() / 1200 + i) * 40;
+                ctx.beginPath();
+                ctx.arc(W / 2, H / 2, r + i * 30, 0, Math.PI * 2);
+                ctx.strokeStyle = `rgba(${80 + i * 10},${90 + i * 12},${160 + i * 9},0.04)`;
+                ctx.lineWidth = 2;
+                ctx.stroke();
+            }
+        }
+
+        function drawToast(o) {
+            const br = o.brown, w = o.w, h = o.h;
+            ctx.save();
+            ctx.translate(o.x, o.y);
+            ctx.rotate(o.a);
+            const r = 10;
+
+            ctx.fillStyle = `hsl(${35 + br * 20}deg 90% ${85 - 35 * br}%)`;
+            roundRect(-w / 2, -h / 2, w, h, r);
+            ctx.fill();
+
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = `hsl(${22 + br * 10}deg 60% ${45 - 12 * br}%)`;
+            roundRect(-w / 2, -h / 2, w, h, r);
+            ctx.stroke();
+
+            ctx.fillStyle = `rgba(0,0,0,${0.06 + 0.12 * br})`;
+            for (let i = 0; i < 4; i++) {
+                ctx.beginPath();
+                ctx.ellipse(
+                    -w * 0.15 + i * (w * 0.1),
+                    -h * 0.1 + h * 0.15,
+                    w * 0.07, w * 0.05,
+                    0, 0, Math.PI * 2
+                );
+                ctx.fill();
+            }
+            ctx.restore();
+        }
+
+        function roundRect(x, y, w, h, r) {
+            ctx.beginPath();
+            ctx.moveTo(x + r, y);
+            ctx.arcTo(x + w, y, x + w, y + h, r);
+            ctx.arcTo(x + w, y + h, x, y + h, r);
+            ctx.arcTo(x, y + h, x, y, r);
+            ctx.arcTo(x, y, x + w, y, r);
+            ctx.closePath();
+        }
+
+        function update() {
+            ctx.clearRect(0, 0, W, H);
+            bg();
+
+            // Tostadas
+            for (let i = toasts.length - 1; i >= 0; i--) {
+                const o = toasts[i];
+                const dx = mouse.x - o.x, dy = mouse.y - o.y;
+                const d = Math.hypot(dx, dy);
+                const pull = d < 220 ? 0.002 : 0;
+                o.vx += dx * pull;
+                o.vy += dy * pull;
+                if (gravity) o.vy += 0.028;
+                o.vx *= 0.996;
+                o.vy *= 0.996;
+                o.a += o.va;
+                o.x += o.vx;
+                o.y += o.vy;
+
+                if (o.x < -120 || o.x > W + 120 || o.y > H + 200) {
+                    toasts.splice(i, 1);
+                    continue;
+                }
+
+                if (toasting || heat > 0.34)
+                    o.brown = Math.min(1, o.brown + heat * 0.006 + Math.random() * 0.002);
+
+                if (o.brown === 1 && Math.random() < 0.02) {
+                    spark(o.x, o.y, '#ffa000');
+                    bubble(o.x, o.y);
+                }
+
+                drawToast(o);
+            }
+
+            // Chispas
+            for (let i = sparks.length - 1; i >= 0; i--) {
+                const p = sparks[i];
+                p.x += p.vx;
+                p.y += p.vy;
+                p.vx *= 0.98;
+                p.vy *= 0.98;
+                p.life -= 0.02;
+
+                ctx.globalAlpha = Math.max(0, p.life);
+                ctx.fillStyle = p.col;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, 2.2, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.globalAlpha = 1;
+
+                if (p.life <= 0) sparks.splice(i, 1);
+            }
+
+            // Burbujas
+            for (let i = bubbles.length - 1; i >= 0; i--) {
+                const b = bubbles[i];
+                b.x += b.vx;
+                b.y += b.vy;
+                b.a -= 0.01;
+                if (b.y < -40 || b.a <= 0) {
+                    bubbles.splice(i, 1);
+                    continue;
+                }
+
+                ctx.globalAlpha = Math.max(0, b.a * 0.6);
+                ctx.strokeStyle = 'rgba(200,230,255,0.6)';
+                ctx.beginPath();
+                ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
+                ctx.stroke();
+                ctx.globalAlpha = 1;
+            }
+
+            // Texto inferior
+            ctx.fillStyle = 'rgba(255,213,126,0.12)';
+            ctx.font = '700 28px system-ui, Segoe UI, Roboto';
+            ctx.textAlign = 'center';
+            ctx.fillText('Colapsa el multigrano. Haz tostadas, no sentido.', W / 2, H - 60);
+
+            stat.textContent = `${toasts.length} tostada(s)`;
+
+            requestAnimationFrame(update);
+        }
+
+        // Iniciar
+        for (let i = 0; i < 8; i++) spawnToast(rand(0, W), rand(0, H * 0.4));
+        update();
+    </script>
+</body>
+</html>
