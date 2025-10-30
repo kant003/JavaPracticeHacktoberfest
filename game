@@ -1,0 +1,102 @@
+import java.util.Random;
+import java.util.Scanner;
+
+/**
+ * Jogo rápido de Jokenpô (Pedra, Papel, Tesoura) em Java.
+ * - 1 arquivo apenas (cumpre a regra do repositório).
+ * - Comentários explicando cada parte do código (cumpre "Adicionar comentários").
+ * - Melhor de 3 rodadas (quem chegar a 2 pontos primeiro vence).
+ *
+ * Como compilar e executar (em terminal):
+ *   javac RockPaperScissorsDebora.java
+ *   java RockPaperScissorsDebora
+ */
+public class RockPaperScissorsDebora {
+
+    // Representação das jogadas (0, 1, 2) para facilitar comparações
+    private static final int PEDRA = 0;
+    private static final int PAPEL = 1;
+    private static final int TESOURA = 2;
+
+    // Mapeia número -> texto para exibir jogada de forma amigável
+    private static String toName(int move) {
+        switch (move) {
+            case PEDRA: return "Pedra";
+            case PAPEL: return "Papel";
+            case TESOURA: return "Tesoura";
+            default: return "Desconhecido";
+        }
+    }
+
+    // Determina o resultado da rodada: 1 = jogador vence, -1 = CPU vence, 0 = empate
+    private static int roundResult(int player, int cpu) {
+        if (player == cpu) return 0; // empate
+        // Regras: Pedra ganha da Tesoura; Papel ganha da Pedra; Tesoura ganha do Papel
+        if ((player == PEDRA && cpu == TESOURA) ||
+            (player == PAPEL && cpu == PEDRA) ||
+            (player == TESOURA && cpu == PAPEL)) {
+            return 1; // jogador venceu
+        }
+        return -1; // CPU venceu
+    }
+
+    // Lê a jogada do usuário com validação simples
+    private static int readPlayerMove(Scanner sc) {
+        while (true) {
+            System.out.print("Escolha sua jogada [0=Pedra, 1=Papel, 2=Tesoura]: ");
+            String input = sc.nextLine().trim();
+            try {
+                int val = Integer.parseInt(input);
+                if (val == PEDRA || val == PAPEL || val == TESOURA) {
+                    return val;
+                }
+                System.out.println("Entrada inválida. Digite 0, 1 ou 2.");
+            } catch (NumberFormatException e) {
+                System.out.println("Entrada inválida. Digite 0, 1 ou 2.");
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Random rng = new Random();
+
+        System.out.println("=== Jokenpô (Pedra, Papel, Tesoura) - Melhor de 3 ===");
+        System.out.println("Regras: Pedra(0) x Tesoura(2), Papel(1) x Pedra(0), Tesoura(2) x Papel(1).");
+        System.out.println("Vence quem fizer 2 pontos primeiro.\n");
+
+        int scorePlayer = 0;
+        int scoreCpu = 0;
+
+        // Continua até alguém chegar a 2 vitórias (melhor de 3)
+        while (scorePlayer < 2 && scoreCpu < 2) {
+            int player = readPlayerMove(sc);
+            int cpu = rng.nextInt(3); // 0, 1 ou 2
+
+            System.out.println("Você jogou: " + toName(player));
+            System.out.println("CPU jogou : " + toName(cpu));
+
+            int result = roundResult(player, cpu);
+            if (result == 1) {
+                scorePlayer++;
+                System.out.println("-> Você venceu esta rodada!");
+            } else if (result == -1) {
+                scoreCpu++;
+                System.out.println("-> CPU venceu esta rodada!");
+            } else {
+                System.out.println("-> Empate! Ninguém pontua.");
+            }
+
+            System.out.printf("Placar: Você %d x %d CPU%n%n", scorePlayer, scoreCpu);
+        }
+
+        // Exibe o vencedor final
+        if (scorePlayer > scoreCpu) {
+            System.out.println("🎉 Parabéns! Você venceu o jogo!");
+        } else {
+            System.out.println("🤖 A CPU venceu desta vez. Tente novamente!");
+        }
+
+        sc.close();
+    }
+}
