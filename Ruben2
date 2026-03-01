@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Primera pagina</title>
+	<link href="estilo1.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<h2>Esta es la primera pag
+s</h2>
+<a href="ejercicio2.html">Volver a pagina principal</a>
+</body>
+</html>
